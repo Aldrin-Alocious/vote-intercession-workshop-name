@@ -3,7 +3,6 @@ import joblib
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-st.image('SCT-LOGO.jpg')
 st.title("PoolLab")
 df=st.file_uploader('Upload a CSV')
 AN=df[['Unnamed: 3']]

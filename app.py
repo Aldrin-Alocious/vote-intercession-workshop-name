@@ -92,7 +92,7 @@ def seats(d):
       tfw=tfw+1
   snos=np.array([m,mq,nri,tfw])
   stype=np.array(["Merit","Management Quota","NRI","TFW-Merit"])
-  width = st.sidebar.slider("fig size", 1, 25, 3)
+  width = st.sidebar.slider("fig size", 0, 25, 1)
   height = st.sidebar.slider("font size", 1, 25, 1)
   fig2, ax2 = plt.subplots(figsize=(width,width))
   ax2.pie(snos, labels=stype, autopct='%1.1f%%', textprops={'fontsize': height})

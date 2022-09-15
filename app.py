@@ -1,30 +1,39 @@
 import streamlit as st
 import joblib
 import pandas as pd
-from sklearn import datasets
-st.title('IRIS CLASSIFIER')
-st.subheader('Sepal Length')
-ip1=st.slider('Enter a value between 0 & 10:', min_value=0.0, max_value=10.0, step=0.1, key=1)
-st.subheader('Sepal Width')
-ip2=st.slider('Enter a value between 0 & 10:', min_value=0.0, max_value=10.0, step=0.1, key=2)
-st.subheader('Petal Length')
-ip3=st.slider('Enter a value between 0 & 10:', min_value=0.0, max_value=10.0, step=0.1, key=3)
-st.subheader('Petal Length')
-ip4=st.slider('Enter a value between 0 & 10:', min_value=0.0, max_value=10.0, step=0.1, key=4)
-iris=datasets.load_iris()
-x=iris.data
-y=iris.target
-df=pd.DataFrame(iris.data)
-df['Target']=iris.target
-from sklearn.neighbors import KNeighborsClassifier
-model=KNeighborsClassifier()
-model.fit(x,y)
-op=model.predict([[ip1,ip2,ip3,ip4]])
-if op[0]==0:
-  out="Iris setosa"
-elif op[0]==1:
-  out="Iris versicolor"
-elif op[0]==2:
-  out="Iris virginica"
-if st.button('Predict'):
-  st.title(out)
+import numpy as np
+import matplotlib.pyplot as plt
+df=st.file_uploader('Upload a CSV')
+AN=df[['Unnamed: 3']]
+CT=df[['Unnamed: 4']]
+AN=AN.to_numpy()
+CT=CT.to_numpy()
+nAI=0;nCS=0;nEC=0;nME=0;nMP=0;nMA=0;nBT=0;nCL=0;
+AIE=[];CSE=[];ECE=[];MEE=[];MPE=[];MAE=[];BTE=[];CLE=[];
+for i in range(1,np.size(AN)):
+  if CT[i,0]=='Artificial Intelligence And Machine Learning':
+    nAI=nAI+1
+    AIE.append(AN[i,0])
+  elif CT[i,0]=='Computer Science':
+    nCS=nCS+1
+    CSE.append(AN[i,0])
+  elif CT[i,0]=='Electronics and Communication':
+    nEC=nEC+1
+    ECE.append(AN[i,0])
+  elif CT[i,0]=='Mechanical':
+    nME=nME+1
+    MEE.append(AN[i,0])
+  elif CT[i,0]=='Mechanical Production':
+    nMP=nMP+1
+    MPE.append(AN[i,0])
+  elif CT[i,0]=='Mechanical Automobile':
+    nMA=nMA+1
+    MAE.append(AN[i,0])
+  elif CT[i,0]=='Biotechnology':
+    nBT=nBT+1
+    BTE.append(AN[i,0])
+  elif CT[i,0]=='Civil':
+    nCL=nCL+1
+    CLE.append(AN[i,0])
+nos=np.array([nAI,nCS,nEC,nME,nMP,nMA,nBT,nCL])
+dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science','Electronics and Communication','Mechanical','Mechanical Production','Mechanical Automobile','Biotechnology','Civil'])

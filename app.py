@@ -4,5 +4,5 @@ import numpy as np
 import matplotlib.pyplot as plt
 st.image("SCT-LOGO.jpg")
 st.title("\t\t\tPOOL LAB")
-df=pd.read_csv(st.file_uploader('Upload a CSV'))
+df=st.dataframe(st.file_uploader('Upload a CSV'))
 st.dataframe(df)

@@ -37,3 +37,5 @@ for i in range(1,np.size(AN)):
   elif CT[i,0]=='Civil':
     nCL=nCL+1
     CLE.append(AN[i,0])
+nos=np.array([nAI,nCS,nEC,nME,nMP,nMA,nBT,nCL])
+dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science','Electronics and Communication','Mechanical','Mechanical Production','Mechanical Automobile','Biotechnology','Civil'])

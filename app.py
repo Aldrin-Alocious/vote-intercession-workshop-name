@@ -118,3 +118,46 @@ st.header('Biotechnology and Biochemical Engineering')
 seats(BT)
 st.header('Civil Engineering')
 seats(CL)
+def vacancies(d):
+  AD=d[['Unnamed: 8']]
+  AD=AD.to_numpy()
+  AT=d[['Unnamed: 6']]
+  AT=AT.to_numpy()
+  vm=0;vmq=0;vnri=0;vtfw=0;
+  for i in range(1,np.size(AD)):
+    if AD[i]=='No':
+      if AT[i]=='Merit':
+       vm=vm+1
+      elif AT[i]=='Management Quota':
+       vmq=vmq+1
+      elif AT[i]=='NRI':
+       vnri=vnri+1
+      elif AT[i]=='TFW-Merit':
+       vtfw=vtfw+1
+  vsnos=np.array([vm,vmq,vnri,vtfw])
+  return vsnos
+def vacanciesPlot(d):
+  vsnos=vacancies(d)
+  vstype=np.array(["Merit","Management Quota","NRI","TFW-Merit"])
+  plt.bar(vstype,vsnos,color=['b','lime','orange','red'],width=0.1)
+  plt.show()
+  print("Merit\t\t-",vsnos[0])
+  print("Management\t-",vsnos[1])
+  print("NRI\t\t-",vsnos[2])
+  print("TFW-Merit\t-",vsnos[3])
+st.header.title('Vacancies in Artificial Intelligence And Machine Learning')
+vacanciesPlot(AI)
+st.header('Vacancies in Computer Science Engineering')
+vacanciesPlot(CS)
+st.header('Vacancies in Electronics and Communication Engineering')
+vacanciesPlot(EC)
+st.header('Vacancies in Mechanical Engineering')
+vacanciesPlot(ME)
+st.header('Vacancies in Mechanical Production Engineering')
+vacanciesPlot(MP)
+st.header('Vacancies in Mechanical Automobile Engineering')
+vacanciesPlot(MA)
+st.header('Vacancies in Biotechnology and Biochemical Engineering')
+vacanciesPlot(BT)
+st.header('Vacancies in Civil Engineering')
+vacanciesPlot(CL)

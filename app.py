@@ -139,7 +139,8 @@ def vacancies(d):
 def vacanciesPlot(d):
   vsnos=vacancies(d)
   vstype=np.array(["Merit","Management Quota","NRI","TFW-Merit"])
-  st.bar_chart(data=None, *, x=vstype, y=snos, width=0, height=0, use_container_width=True)
+  chart_data = pd.DataFrame(vsnos, vstype)
+  st.bar_chart(chart_data)
   st.write("Merit\t\t-",vsnos[0])
   st.write("Management\t-",vsnos[1])
   st.write("NRI\t\t-",vsnos[2])

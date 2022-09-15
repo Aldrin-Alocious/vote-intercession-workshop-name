@@ -52,3 +52,28 @@ st.write('Mechanical Production\t\t\t\t- ',nMP)
 st.write('Mechanical Automobile\t\t\t\t- ',nMA)
 st.write('Biotechnology\t\t\t\t\t- ',nBT)
 st.write('Civil\t\t\t\t\t\t- ',nCL)
+AIE=np.array(AIE,ndmin=2)
+CSE=np.array(CSE,ndmin=2)
+ECE=np.array(ECE,ndmin=2)
+MEE=np.array(MEE,ndmin=2)
+MPE=np.array(MPE,ndmin=2)
+MAE=np.array(MAE,ndmin=2)
+BTE=np.array(BTE,ndmin=2)
+CLE=np.array(CLE,ndmin=2)
+def departments(a,b,d):
+  c=pd.DataFrame()
+  c=c.append(df.loc[0], ignore_index=False, verify_integrity=False, sort=None)
+  for i in range(0,np.size(b)):
+    for j in range(1,np.size(a)):
+      if b[0,i]==a[j,0]:
+        c=c.append(df.loc[j], ignore_index=False, verify_integrity=False, sort=None)
+        break
+  return c
+AI=departments(AN,AIE,df)
+CS=departments(AN,CSE,df)
+EC=departments(AN,ECE,df)
+ME=departments(AN,MEE,df)
+MP=departments(AN,MPE,df)
+MA=departments(AN,MAE,df)
+BT=departments(AN,BTE,df)
+CL=departments(AN,CLE,df)

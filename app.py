@@ -42,7 +42,7 @@ dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science',
 fig1, ax1 = plt.subplots()
 ax1.pie(nos, labels=dep, autopct='%1.1f%%')
 ax1.axis('equal')
-st.header("Admissions to Sree Chitra Thirunal College of Engineering")
+st.header("Admissions this year")
 st.pyplot(fig1)
 st.write('Artificial Intelligence And Machine Learning\t- ',nAI)
 st.write('Computer Science\t\t\t\t- ',nCS)

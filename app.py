@@ -93,7 +93,7 @@ def seats(d):
   snos=np.array([m,mq,nri,tfw])
   stype=np.array(["Merit","Management Quota","NRI","TFW-Merit"])
   fig2, ax2 = plt.subplots(figsize=(2,2))
-  ax2.pie(snos, labels=stype, autopct='%1.1f%%')
+  ax2.pie(snos, labels=stype, labelsize=2, autopct='%1.1f%%')
   ax2.axis('equal')
   st.pyplot(fig2)
   st.write("Merit\t\t-",m)

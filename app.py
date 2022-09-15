@@ -77,3 +77,26 @@ MP=departments(AN,MPE,df)
 MA=departments(AN,MAE,df)
 BT=departments(AN,BTE,df)
 CL=departments(AN,CLE,df)
+def seats(d):
+  AT=d[['Unnamed: 6']]
+  AT=AT.to_numpy()
+  m=0;mq=0;nri=0;tfw=0;
+  for i in range(1,np.size(AT)):
+    if AT[i]=='Merit':
+      m=m+1
+    elif AT[i]=='Management Quota':
+      mq=mq+1
+    elif AT[i]=='NRI':
+      nri=nri+1
+    elif AT[i]=='TFW-Merit':
+      tfw=tfw+1
+  snos=np.array([m,mq,nri,tfw])
+  stype=np.array(["Merit","Management Quota","NRI","TFW-Merit"])
+  fig2, ax2 = plt.subplots()
+  ax2.pie(snos, labels=stype, autopct='%1.1f%%')
+  ax2.axis('equal')
+  st.pyplot(fig2)
+  st.write("Merit\t\t-",m)
+  st.write("Management\t-",mq)
+  st.write("NRI\t\t-",nri)
+  st.write("TFW-Merit\t-",tfw)

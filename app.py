@@ -4,7 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
-df=pd.read_csv("et lab report.csv")
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()

@@ -39,4 +39,7 @@ for i in range(1,np.size(AN)):
     CLE.append(AN[i,0])
 nos=np.array([nAI,nCS,nEC,nME,nMP,nMA,nBT,nCL])
 dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science','Electronics and Communication','Mechanical','Mechanical Production','Mechanical Automobile','Biotechnology','Civil'])
-st.image(plt.pie(nos,labels=dep))
+fig1, ax1 = plt.subplots()
+ax1.pie(nos, labels=dep, autopct='%1.1f%%', shadow=True, startangle=90)
+ax1.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+st.pyplot(fig1)

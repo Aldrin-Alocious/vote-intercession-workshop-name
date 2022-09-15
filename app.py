@@ -39,5 +39,4 @@ for i in range(1,np.size(AN)):
 nos=np.array([nAI,nCS,nEC,nME,nMP,nMA,nBT,nCL])
 dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science','Electronics and Communication','Mechanical','Mechanical Production','Mechanical Automobile','Biotechnology','Civil'])
 plt.title("Admissions to Sree Chitra Thirunal College of Engineering")
-plt.pie(nos,labels=dep)
-st.image(plt.show())
+st.image(plt.pie(nos,labels=dep))

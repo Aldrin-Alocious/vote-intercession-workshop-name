@@ -145,7 +145,7 @@ def vacanciesPlot(d):
   st.write("Management\t-",vsnos[1])
   st.write("NRI\t\t-",vsnos[2])
   st.write("TFW-Merit\t-",vsnos[3])
-st.header.title('Vacancies in Artificial Intelligence And Machine Learning')
+st.header('Vacancies in Artificial Intelligence And Machine Learning')
 vacanciesPlot(AI)
 st.header('Vacancies in Computer Science Engineering')
 vacanciesPlot(CS)

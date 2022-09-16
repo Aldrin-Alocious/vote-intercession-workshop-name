@@ -173,4 +173,4 @@ with st.form("my_form"):
   spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   submitted=st.form_submit_button(label='Submit')
 if submitted:
-  st.dataframe(spotdf)
+  st.write(op)

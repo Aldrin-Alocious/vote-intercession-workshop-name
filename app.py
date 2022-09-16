@@ -10,8 +10,8 @@ AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()
 CT=CT.to_numpy()
-nAI=0;nCS=0;nEC=0;nME=0;nMP=0;nMA=0;nBT=0;nCL=0;
-AIE=[];CSE=[];ECE=[];MEE=[];MPE=[];MAE=[];BTE=[];CLE=[];
+nAI=0;nCS=0;nEC=0;nME=0;nMA=0;nBT=0;nCL=0;
+AIE=[];CSE=[];ECE=[];MEE=[];MAE=[];BTE=[];CLE=[];
 for i in range(1,np.size(AN)):
   if CT[i,0]=='Artificial Intelligence And Machine Learning':
     nAI=nAI+1
@@ -25,9 +25,6 @@ for i in range(1,np.size(AN)):
   elif CT[i,0]=='Mechanical':
     nME=nME+1
     MEE.append(AN[i,0])
-  elif CT[i,0]=='Mechanical Production':
-    nMP=nMP+1
-    MPE.append(AN[i,0])
   elif CT[i,0]=='Mechanical Automobile':
     nMA=nMA+1
     MAE.append(AN[i,0])
@@ -37,8 +34,8 @@ for i in range(1,np.size(AN)):
   elif CT[i,0]=='Civil':
     nCL=nCL+1
     CLE.append(AN[i,0])
-nos=np.array([nAI,nCS,nEC,nME,nMP,nMA,nBT,nCL])
-dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science','Electronics and Communication','Mechanical','Mechanical Production','Mechanical Automobile','Biotechnology','Civil'])
+nos=np.array([nAI,nCS,nEC,nME,nMA,nBT,nCL])
+dep=np.array(['Artificial Intelligence And Machine Learning','Computer Science','Electronics and Communication','Mechanical','Mechanical Automobile','Biotechnology','Civil'])
 fig1, ax1 = plt.subplots()
 ax1.pie(nos, labels=dep, autopct='%1.1f%%')
 ax1.axis('equal')
@@ -48,7 +45,6 @@ st.write('Artificial Intelligence And Machine Learning\t- ',nAI)
 st.write('Computer Science\t\t\t\t- ',nCS)
 st.write('Electronics and Communication\t\t\t- ',nEC)
 st.write('Mechanical\t\t\t\t\t- ',nME)
-st.write('Mechanical Production\t\t\t\t- ',nMP)
 st.write('Mechanical Automobile\t\t\t\t- ',nMA)
 st.write('Biotechnology\t\t\t\t\t- ',nBT)
 st.write('Civil\t\t\t\t\t\t- ',nCL)
@@ -56,7 +52,6 @@ AIE=np.array(AIE,ndmin=2)
 CSE=np.array(CSE,ndmin=2)
 ECE=np.array(ECE,ndmin=2)
 MEE=np.array(MEE,ndmin=2)
-MPE=np.array(MPE,ndmin=2)
 MAE=np.array(MAE,ndmin=2)
 BTE=np.array(BTE,ndmin=2)
 CLE=np.array(CLE,ndmin=2)
@@ -73,7 +68,6 @@ AI=departments(AN,AIE,df)
 CS=departments(AN,CSE,df)
 EC=departments(AN,ECE,df)
 ME=departments(AN,MEE,df)
-MP=departments(AN,MPE,df)
 MA=departments(AN,MAE,df)
 BT=departments(AN,BTE,df)
 CL=departments(AN,CLE,df)
@@ -110,8 +104,6 @@ st.header('Electronics and Communication Engineering')
 seats(EC)
 st.header('Mechanical Engineering')
 seats(ME)
-st.header('Mechanical Production Engineering')
-seats(MP)
 st.header('Mechanical Automobile Engineering')
 seats(MA)
 st.header('Biotechnology and Biochemical Engineering')
@@ -153,8 +145,6 @@ st.header('Vacancies in Electronics and Communication Engineering')
 vacanciesPlot(EC)
 st.header('Vacancies in Mechanical Engineering')
 vacanciesPlot(ME)
-st.header('Vacancies in Mechanical Production Engineering')
-vacanciesPlot(MP)
 st.header('Vacancies in Mechanical Automobile Engineering')
 vacanciesPlot(MA)
 st.header('Vacancies in Biotechnology and Biochemical Engineering')

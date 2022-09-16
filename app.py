@@ -166,5 +166,5 @@ with st.form("my_form"):
   kr=st.text_input('KEAM Ramk')
   na=st.text_input('Name')
   rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-  op=st.multiselect('Options', options)
+  op=st.multiselect('Options', [1,2])
   submitted=st.form_submit_button(label='Submit')

@@ -111,26 +111,56 @@ def vslashs(a,b):
   return c
 vdf=pd.DataFrame()
 vdf['']=['Merit','Management Quota','NRI','TFW-Merit']
-seat=seats(AI)
+seat1=seats(AI)
 vacan=vacancies(AI)
-vdf['Artificial Intelligence']=vslashs(vacan,seat)
-seat=seats(CS)
+vdf['Artificial Intelligence']=vslashs(vacan,seat1)
+seat2=seats(CS)
 vacan=vacancies(CS)
-vdf['Computer Science']=vslashs(vacan,seat)
-seat=seats(EC)
+vdf['Computer Science']=vslashs(vacan,seat2)
+seat3=seats(EC)
 vacan=vacancies(EC)
-vdf['Electronics and Communication']=vslashs(vacan,seat)
-seat=seats(ME)
+vdf['Electronics and Communication']=vslashs(vacan,seat3)
+seat4=seats(ME)
 vacan=vacancies(ME)
-vdf['Mechanical Engineering']=vslashs(vacan,seat)
-seat=seats(MA)
+vdf['Mechanical Engineering']=vslashs(vacan,seat4)
+seat5=seats(MA)
 vacan=vacancies(MA)
-vdf['Automobile Engineering']=vslashs(vacan,seat)
-seat=seats(BT)
+vdf['Automobile Engineering']=vslashs(vacan,seat5)
+seat6=seats(BT)
 vacan=vacancies(BT)
-vdf['Biotechnology']=vslashs(vacan,seat)
-seat=seats(CL)
+vdf['Biotechnology']=vslashs(vacan,seat6)
+seat7=seats(CL)
 vacan=vacancies(CL)
-vdf['Civil Engineering']=vslashs(vacan,seat)
+vdf['Civil Engineering']=vslashs(vacan,seat7)
 st.dataframe(vdf)
+options=[];
+if seat1[0]>0:
+  options.append('AI-SM')
+if seat1[1]>0:
+  options.append('AI-MG')
+if seat2[0]>0:
+  options.append('CS-SM')
+if seat2[1]>0:
+  options.append('CS-MG')
+if seat3[0]>0:
+  options.append('EC-SM')
+if seat3[1]>0:
+  options.append('EC-MG')
+if seat4[0]>0:
+  options.append('ME-SM')
+if seat4[1]>0:
+  options.append('ME-MG')
+if seat5[0]>0:
+  options.append('MA-SM')
+if seat5[1]>0:
+  options.append('MA-MG')
+if seat6[0]>0:
+  options.append('BT-SM')
+if seat6[1]>0:
+  options.append('BT-MG')
+if seat7[0]>0:
+  options.append('CS-SM')
+if seat7[1]>0:
+  options.append('CS-MG')
 st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
+st.multiselect('Options', options)

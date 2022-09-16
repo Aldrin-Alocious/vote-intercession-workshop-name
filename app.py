@@ -159,8 +159,8 @@ if seat6[0]>0:
 if seat6[1]>0:
   options.append('BT-MG')
 if seat7[0]>0:
-  options.append('CS-SM')
+  options.append('CL-SM')
 if seat7[1]>0:
-  options.append('CS-MG')
+  options.append('CL-MG')
 st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
 st.multiselect('Options', options)

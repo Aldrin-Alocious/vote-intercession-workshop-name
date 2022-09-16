@@ -167,6 +167,4 @@ with st.form("my_form"):
   na=st.text_input('Name')
   rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
-  submitted = st.form_submit_button(label='Submit')
-  if submitted:
-    st.write("Outside the form")
+  submitted=st.form_submit_button(label='Submit')

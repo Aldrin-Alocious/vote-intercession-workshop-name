@@ -163,15 +163,13 @@ if vac7[0]>0:
 if vac7[1]>0:
   options.append('CL-MG')
 spotdf=pd.DataFrame()
-spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options'] 
+spotdf=spotdf.append(['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options'], ignore_index=False, verify_integrity=False, sort=None) 
 with st.form("my_form"):
   appno=st.text_input('Application Number')
   na=st.text_input('Name')
   kr=st.text_input('KEAM Rank')
   rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
-  spotdf.loc[len(spotdf.index)] = [appno, na, kr, op] 
-  df2 = {'Application Number': appno, 'Name': na, 'KEAM Rank': kr, 'Registration Category':rc, 'Options': op}
-  spotdf=spotdf.append(df2, ignore_index = True)
+  spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   submitted=st.form_submit_button(label='Submit')
 st.DataFrame(spotdf)

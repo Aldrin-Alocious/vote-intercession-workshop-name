@@ -162,16 +162,12 @@ if vac7[0]>0:
   options.append('CL-SM')
 if vac7[1]>0:
   options.append('CL-MG')
-st.text_input('KEAM Ramk')
-st.text_input('Name')
-st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-st.multiselect('Options', options)
 with st.form("my_form"):
-  st.text_input('KEAM Ramk')
-  st.text_input('Name')
-  st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-  st.multiselect('Options', options)
-  submitted = st.button("Submit")
+  kr=st.text_input('KEAM Ramk')
+  na=st.text_input('Name')
+  rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
+  op=st.multiselect('Options', options)
+  submitted = st.form_submit_button(label='Submit')
   if submitted:
     st.write("slider", slider_val, "checkbox", checkbox_val)
 st.write("Outside the form")

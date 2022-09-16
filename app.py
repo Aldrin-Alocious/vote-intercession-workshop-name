@@ -134,33 +134,33 @@ vac7=vacancies(CL)
 vdf['Civil Engineering']=vslashs(vac7,seat7)
 st.dataframe(vdf)
 options=[];
-if seat1[0]>0:
+if vac1[0]>0:
   options.append('AI-SM')
-if seat1[1]>0:
+if vac1[1]>0:
   options.append('AI-MG')
-if seat2[0]>0:
+if vac2[0]>0:
   options.append('CS-SM')
-if seat2[1]>0:
+if vac2[1]>0:
   options.append('CS-MG')
-if seat3[0]>0:
+if vac3[0]>0:
   options.append('EC-SM')
-if seat3[1]>0:
+if vac3[1]>0:
   options.append('EC-MG')
-if seat4[0]>0:
+if vac4[0]>0:
   options.append('ME-SM')
-if seat4[1]>0:
+if vac4[1]>0:
   options.append('ME-MG')
-if seat5[0]>0:
+if vac5[0]>0:
   options.append('MA-SM')
-if seat5[1]>0:
+if vac5[1]>0:
   options.append('MA-MG')
-if seat6[0]>0:
+if vac6[0]>0:
   options.append('BT-SM')
-if seat6[1]>0:
+if vac6[1]>0:
   options.append('BT-MG')
-if seat7[0]>0:
+if vac7[0]>0:
   options.append('CL-SM')
-if seat7[1]>0:
+if vac7[1]>0:
   options.append('CL-MG')
   st.write(seat7[1])
 st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])

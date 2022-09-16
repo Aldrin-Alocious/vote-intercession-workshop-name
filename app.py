@@ -99,9 +99,9 @@ def vacancies(d):
       elif AT[i]=='Management Quota':
        vmq=vmq+1
       elif AT[i]=='NRI':
-       vnri=vnri+1
+       vnri=vnri
       elif AT[i]=='TFW-Merit':
-       vtfw=vtfw+1
+       vtfw=vtfw
   vsnos=np.array([vm,vmq,vnri,vtfw])
   return vsnos
 def vslashs(a,b):

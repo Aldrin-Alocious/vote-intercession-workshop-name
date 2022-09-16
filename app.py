@@ -162,9 +162,14 @@ if vac7[0]>0:
   options.append('CL-SM')
 if vac7[1]>0:
   options.append('CL-MG')
+spotdf=pd.DataFrame()
+spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Options'] 
 with st.form("my_form"):
-  kr=st.text_input('KEAM Ramk')
+  appno=st.text_input('Application Number')
   na=st.text_input('Name')
+  kr=st.text_input('KEAM Rank')
   rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
+  spotdf.loc[len(spotdf.index)] = [appno, na, kr, op] 
   submitted=st.form_submit_button(label='Submit')
+st.DataFrame(spotdf)

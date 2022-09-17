@@ -170,7 +170,7 @@ def oplist(op):
   for i in range(0,np.size(op)):
     c=str(c)+' '+str(op[i])
   return c
-  with st.form("my_form"):
+  with st.form("my_form",clear_on_submit=True):
     appno=st.text_input('Application Number')
     na=st.text_input('Name')
     kr=st.text_input('KEAM Rank')
@@ -180,12 +180,3 @@ def oplist(op):
     spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
     submitted=st.form_submit_button(label='Submit')
     finished=st.form_submit_button(label='Finished')
-    if submitted == True:
-        st.markdown('<h3>Thank you for your feedback!</h3>', unsafe_allow_html=True)
-        
-        st.markdown('Submitted responses:')
-        st.write(spotdf)
-        open('spotdf.csv', 'w').write(spotdf.to_csv())
-    
-    else:
-        st.markdown("Click submit to save form responses.")

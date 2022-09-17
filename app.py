@@ -169,7 +169,6 @@ def oplist(op):
   for i in range(0,np.size(op)):
     c=str(c)+' '+str(op[i])
   return c
-while True:
   with st.form("my_form"):
     appno=st.text_input('Application Number')
     na=st.text_input('Name')

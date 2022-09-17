@@ -184,7 +184,7 @@ with st.form("my_form",clear_on_submit=True):
     spotdf['Application Number']=appno
     spotdf['Name']=na
     spotdf['KEAM Rank']=kr
-    spotdf['Reservation Category']=ra
+    spotdf['Reservation Category']=rc
     spotdf['Opted']=opamp
     st.write(spotdf)
     #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)

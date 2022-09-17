@@ -172,6 +172,5 @@ with st.form("my_form"):
   op=st.multiselect('Options', options)
   spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   submitted=st.form_submit_button(label='Submit')
-if submitted:
-  st.write(op)
+
 st.dataframe(spotdf)

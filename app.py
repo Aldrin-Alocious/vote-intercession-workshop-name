@@ -164,6 +164,7 @@ if vac7[1]>0:
   options.append('CL-MG')
 spotdf=pd.DataFrame()
 spotdf=spotdf.append(['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options'], ignore_index=False, verify_integrity=False, sort=None)
+st.write(spotdf)
 def oplist(op):
   c='';
   for i in range(0,np.size(op)):

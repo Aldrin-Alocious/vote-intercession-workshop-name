@@ -172,6 +172,12 @@ def oplist(op):
     c=str(c)+' '+str(op[i])
   return c
 appno=[];na=[];kr=[];rc=[];opamp=[];
+def spotlist(a,b,c,d,e):
+  spotdf['Application Number']=a
+  spotdf['Name']=b
+  spotdf['KEAM Rank']=c
+  spotdf['Reservation Category']=d
+  spotdf['Opted']=e
 with st.form("my_form",clear_on_submit=False):
   appno.append(st.text_input('Application Number'))
   na.append(st.text_input('Name'))
@@ -181,11 +187,7 @@ with st.form("my_form",clear_on_submit=False):
   opamp.append(oplist(op))
   submitted=st.form_submit_button(label='Submit')
   if submitted:
-    spotdf['Application Number']=appno
-    spotdf['Name']=na
-    spotdf['KEAM Rank']=kr
-    spotdf['Reservation Category']=rc
-    spotdf['Opted']=opamp
+    spotlist(appno,na,kr,rc,opamp)
     st.write(spotdf)
     #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   finished=st.form_submit_button(label='Finish')

@@ -71,7 +71,6 @@ ME=departments(AN,MEE,df)
 MA=departments(AN,MAE,df)
 BT=departments(AN,BTE,df)
 CL=departments(AN,CLE,df)
-st.write(AI)
 def seats(d):
   AT=d[['Unnamed: 6']]
   AT=AT.to_numpy()
@@ -164,7 +163,8 @@ if vac7[0]>0:
 if vac7[1]>0:
   options.append('CL-MG')
 spotdf=pd.DataFrame()
-spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options']
+#spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options']
+#df = df.append(df2, ignore_index = True)
 st.write(spotdf)
 def oplist(op):
   c='';
@@ -180,6 +180,8 @@ with st.form("my_form",clear_on_submit=True):
   op=oplist(op)
   submitted=st.form_submit_button(label='Submit')
   if submitted:
+    spotdf['Application Number'].append(appno)
+    st.write(spotdf)
     spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   finished=st.form_submit_button(label='Finish')
   if finished:

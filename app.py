@@ -179,4 +179,3 @@ def oplist(op):
     op=oplist(op)
     spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
     submitted=st.form_submit_button(label='Submit')
-    finished=st.form_submit_button(label='Finished')

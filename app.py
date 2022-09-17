@@ -172,7 +172,7 @@ def oplist(op):
     c=str(c)+' '+str(op[i])
   return c
 appno=[];na=[];kr=[];rc=[];opamp=[];
-with st.form("my_form",clear_on_submit=True):
+with st.form("my_form",clear_on_submit=False):
   appno.append(st.text_input('Application Number'))
   na.append(st.text_input('Name'))
   kr.append(st.text_input('KEAM Rank'))

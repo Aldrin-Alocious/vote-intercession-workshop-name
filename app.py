@@ -177,6 +177,9 @@ with st.form("my_form",clear_on_submit=True):
   rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
   op=oplist(op)
-  spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   submitted=st.form_submit_button(label='Submit')
+  if submitted:
+    spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   finished=st.form_submit_button(label='Finish')
+  if finished:
+    st.write(spotdf)

@@ -194,8 +194,4 @@ with st.form("my_form",clear_on_submit=False):
     opamp.append(ge)
     spotlist(appno,na,kr,rc,opamp)
     st.write(spotdf)
-    #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
-  finished=st.form_submit_button(label='Finish')
-  if finished:
-    st.write(spotdf)
-    st.stop()
+    #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None) finished=st.form_submit_button(label='Finish')

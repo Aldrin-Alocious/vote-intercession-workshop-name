@@ -178,6 +178,28 @@ def spotlist(a,b,c,d,e):
   spotdf['KEAM Rank']=c
   spotdf['Reservation Category']=d
   spotdf['Opted']=e
+"st.session_state object",st.session_state
+if 'a key value' not in st.session_state:
+  st.session_state['a key value']=value
+if "boolean" not in st.session_state:
+  st.session_state.boolean=false
+st.write(st.session_state)
+st.write('a key value is',st.session_state['a key value'])
+for the_key in st.session_state.key():
+  st.write(the_key)
+for the_values in st.session_state.values():
+  st.write(the_values)
+for item in st.session_state.items():
+  st.write(item)
+button=st.button('Update State')
+'before pressing button',st.session_state
+if button:
+  st.session_state['a key value']+=1
+  st.session_state.boolean=not st.session_state.boolean
+  'after pressing button',st.session_state
+for key in st.session_state.key():
+  del st.session_state[key]
+st.session_state
 with st.form("my_form",clear_on_submit=False):
   ga=st.text_input('Application Number')
   gb=st.text_input('Name')

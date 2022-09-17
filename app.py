@@ -182,6 +182,6 @@ with st.form("my_form",clear_on_submit=True):
     spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   finished=st.form_submit_button(label='Finish')
   if finished:
-    goto here;
-here:
+    goto .here
+label .here
   st.write(spotdf)

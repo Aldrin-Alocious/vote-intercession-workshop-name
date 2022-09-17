@@ -184,4 +184,4 @@ with st.form("my_form",clear_on_submit=True):
   if finished:
     goto here;
 here:
-st.write(spotdf)
+  st.write(spotdf)

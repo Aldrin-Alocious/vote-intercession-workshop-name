@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from goto import with_goto
 st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
@@ -164,7 +163,7 @@ if vac7[0]>0:
 if vac7[1]>0:
   options.append('CL-MG')
 spotdf=pd.DataFrame()
-spotdf=spotdf.append(['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options'], ignore_index=False, verify_integrity=False, sort=None)
+spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options']
 st.write(spotdf)
 def oplist(op):
   c='';
@@ -183,6 +182,5 @@ with st.form("my_form",clear_on_submit=True):
     spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   finished=st.form_submit_button(label='Finish')
   if finished:
-    goto .end
-label .end
-st.write(spotdf)
+    st.write(spotdf)
+    st.stop()

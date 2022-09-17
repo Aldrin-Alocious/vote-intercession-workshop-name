@@ -169,14 +169,17 @@ def oplist(op):
   for i in range(0,np.size(op)):
     c=str(c)+' '+str(op[i])
   return c
-with st.form("my_form"):
-  appno=st.text_input('Application Number')
-  na=st.text_input('Name')
-  kr=st.text_input('KEAM Rank')
-  rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-  op=st.multiselect('Options', options)
-  op=oplist(op)
-  spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
-  submitted=st.form_submit_button(label='Submit')
-  
+while True:
+  with st.form("my_form"):
+    appno=st.text_input('Application Number')
+    na=st.text_input('Name')
+    kr=st.text_input('KEAM Rank')
+    rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
+    op=st.multiselect('Options', options)
+    op=oplist(op)
+    spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
+    submitted=st.form_submit_button(label='Submit')
+    finished=st.form_submit_button(label='Finished')
+  if finished:
+    break
 st.dataframe(spotdf)

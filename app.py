@@ -165,24 +165,29 @@ if vac7[1]>0:
 spotdf=pd.DataFrame()
 #spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options']
 #df = df.append(df2, ignore_index = True)
-st.write(spotdf)
+#st.write(spotdf)
 def oplist(op):
   c='';
   for i in range(0,np.size(op)):
     c=str(c)+' '+str(op[i])
   return c
+appno=[];na=[];kr=[];rc=[];opamp=[];
 with st.form("my_form",clear_on_submit=True):
-  appno=st.text_input('Application Number')
-  na=st.text_input('Name')
-  kr=st.text_input('KEAM Rank')
-  rc=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
+  appno.append(st.text_input('Application Number'))
+  na.append(st.text_input('Name'))
+  kr.append(st.text_input('KEAM Rank'))
+  rc.append(st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)']))
   op=st.multiselect('Options', options)
-  op=oplist(op)
+  opamp.append(oplist(op))
   submitted=st.form_submit_button(label='Submit')
   if submitted:
-    spotdf['Application Number'].append(appno)
+    spotdf['Application Number']=appno
+    spotdf['Name']=na
+    spotdf['KEAM Rank']=kr
+    spotdf['Reservation Category']=ra
+    spotdf['Opted']=opamp
     st.write(spotdf)
-    spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
+    #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)
   finished=st.form_submit_button(label='Finish')
   if finished:
     st.write(spotdf)

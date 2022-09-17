@@ -71,6 +71,7 @@ ME=departments(AN,MEE,df)
 MA=departments(AN,MAE,df)
 BT=departments(AN,BTE,df)
 CL=departments(AN,CLE,df)
+st.write(AI)
 def seats(d):
   AT=d[['Unnamed: 6']]
   AT=AT.to_numpy()

@@ -182,4 +182,3 @@ while True:
     finished=st.form_submit_button(label='Finished')
   if finished:
     break
-st.dataframe(spotdf)

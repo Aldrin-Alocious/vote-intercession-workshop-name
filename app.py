@@ -183,8 +183,8 @@ with st.form("my_form",clear_on_submit=False):
   gb=st.text_input('Name')
   gc=st.text_input('KEAM Rank')
   gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-  ge=st.multiselect('Options', options)
-  opamp.append(oplist(op))
+  op=st.multiselect('Options', options)
+  ge=oplist(op)
   submitted=st.form_submit_button(label='Submit')
   if submitted:
     appno.append(ga)

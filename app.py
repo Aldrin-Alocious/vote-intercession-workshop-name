@@ -179,14 +179,19 @@ def spotlist(a,b,c,d,e):
   spotdf['Reservation Category']=d
   spotdf['Opted']=e
 with st.form("my_form",clear_on_submit=False):
-  appno.append(st.text_input('Application Number'))
-  na.append(st.text_input('Name'))
-  kr.append(st.text_input('KEAM Rank'))
-  rc.append(st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)']))
-  op=st.multiselect('Options', options)
+  ga=st.text_input('Application Number')
+  gb=st.text_input('Name')
+  gc=st.text_input('KEAM Rank')
+  gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
+  ge=st.multiselect('Options', options)
   opamp.append(oplist(op))
   submitted=st.form_submit_button(label='Submit')
   if submitted:
+    appno.append(ga)
+    na.append(gb)
+    kr.append(gc)
+    rc.append(gd)
+    opamp.append(ge)
     spotlist(appno,na,kr,rc,opamp)
     st.write(spotdf)
     #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None)

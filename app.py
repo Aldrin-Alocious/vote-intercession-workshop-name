@@ -200,8 +200,22 @@ def spotlist(a,b,c,d,e):
 #for key in st.session_state.key():
 #  del st.session_state[key]
 #st.session_state
+"st.session_state object",st.session_state
+if "appno" not in st.session_state:
+  st.session_state.appno=''
+if "name" not in st.session_state:
+  st.session_state.name=''
+if "keam" not in st.session_state:
+  st.session_state.keam=''
+if "reserve" not in st.session_state:
+  st.session_state.reserve=''
+if "options" not in st.session_state:
+  st.session_state.options=''
+for item in st.session_state.items():
+  st.write(item)
 with st.form("my_form",clear_on_submit=False):
   ga=st.text_input('Application Number')
+  
   gb=st.text_input('Name')
   gc=st.text_input('KEAM Rank')
   gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
@@ -209,7 +223,7 @@ with st.form("my_form",clear_on_submit=False):
   ge=oplist(op)
   submitted=st.form_submit_button(label='Submit')
   if submitted:
-    st.session_state
+    
     appno.append(ga)
     na.append(gb)
     kr.append(gc)

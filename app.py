@@ -210,7 +210,9 @@ with st.form("my_form",clear_on_submit=False):
       st.write(item)
 finished=st.button(label='Finish')
 if finished:
-  for key in st.session_state.key():
-    del st.session_state[key]
+  st.session_state.appno=''
+  st.session_state.name=''
+  st.session_state.keam=''
+  st.session_state.reserve=''
+  st.session_state.opti=''
   st.stop()
-  st.write("Failed")

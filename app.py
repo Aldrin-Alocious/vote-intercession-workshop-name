@@ -163,9 +163,6 @@ if vac7[0]>0:
 if vac7[1]>0:
   options.append('CL-MG')
 spotdf=pd.DataFrame()
-#spotdf.loc[len(spotdf.index)] = ['Application Number', 'Name', 'KEAM Rank', 'Registration Category', 'Options']
-#df = df.append(df2, ignore_index = True)
-#st.write(spotdf)
 def oplist(op):
   c='';
   for i in range(0,np.size(op)):
@@ -178,7 +175,6 @@ def spotlist(a,b,c,d,e):
   spotdf['KEAM Rank']=c
   spotdf['Reservation Category']=d
   spotdf['Opted']=e
-st.session_state
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -216,4 +212,4 @@ if finished:
   st.session_state.reserve=''
   st.session_state.opti=''
   exit()
-  st.wrie("Failed")
+  st.write("Failed")

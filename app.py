@@ -216,3 +216,4 @@ if finished:
   st.session_state.reserve=''
   st.session_state.opti=''
   exit()
+  st.wrie("Failed")

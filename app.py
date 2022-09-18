@@ -215,4 +215,4 @@ if finished:
   st.session_state.keam=''
   st.session_state.reserve=''
   st.session_state.opti=''
-  exit(0)
+  exit()

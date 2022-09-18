@@ -243,7 +243,7 @@ def forming():
       finished=st.form_submit_button(label='Finish')
       for key in st.session_state.key():
         del st.session_state[key]
-      yield
+      
     st.write("Failed")
 forming()
 st.write("Hello World")

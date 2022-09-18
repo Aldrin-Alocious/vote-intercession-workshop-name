@@ -242,3 +242,4 @@ with st.form("my_form",clear_on_submit=False):
     finished=st.form_submit_button(label='Finish')
     for key in st.session_state.key():
       del st.session_state[key]
+st.write("Hello World")

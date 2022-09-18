@@ -208,7 +208,7 @@ with st.form("my_form",clear_on_submit=False):
     st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
     for item in st.session_state.items():
       st.write(item)
-finished=st.form_submit_button(label='Finish')
+finished=st.button(label='Finish')
 if finished:
   for key in st.session_state.key():
     del st.session_state[key]

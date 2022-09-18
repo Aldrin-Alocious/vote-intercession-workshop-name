@@ -215,15 +215,21 @@ for item in st.session_state.items():
   st.write(item)
 with st.form("my_form",clear_on_submit=False):
   ga=st.text_input('Application Number')
-  
   gb=st.text_input('Name')
   gc=st.text_input('KEAM Rank')
   gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
   ge=oplist(op)
+  st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
   submitted=st.form_submit_button(label='Submit')
   if submitted:
-    
+    st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)
+    st.session_state['name']=str(st.session_state['name'])+'#'+str(gb)
+    st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
+    st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
+    st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
+    for item in st.session_state.items():
+      st.write(item)
     appno.append(ga)
     na.append(gb)
     kr.append(gc)

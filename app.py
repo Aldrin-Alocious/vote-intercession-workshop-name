@@ -200,48 +200,49 @@ def spotlist(a,b,c,d,e):
 #for key in st.session_state.key():
 #  del st.session_state[key]
 #st.session_state
-st.session_state
-if "appno" not in st.session_state:
-  st.session_state.appno=''
-if "name" not in st.session_state:
-  st.session_state.name=''
-if "keam" not in st.session_state:
-  st.session_state.keam=''
-if "reserve" not in st.session_state:
-  st.session_state.reserve=''
-if "opti" not in st.session_state:
-  st.session_state.opti=''
-for item in st.session_state.items():
-  st.write(item)
-with st.form("my_form",clear_on_submit=False):
-  ga=st.text_input('Application Number')
-  gb=st.text_input('Name')
-  gc=st.text_input('KEAM Rank')
-  gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-  op=st.multiselect('Options', options)
-  ge=oplist(op)
-  st.session_state['opti']=str(st.session_state['opti'])+'#'+str(ge)
-  submitted=st.form_submit_button(label='Submit')
-  finished=st.form_submit_button(label='Finish')
-  if submitted:
-    st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)
-    st.session_state['name']=str(st.session_state['name'])+'#'+str(gb)
-    st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
-    st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
-    st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
-    for item in st.session_state.items():
-      st.write(item)
-    appno.append(ga)
-    na.append(gb)
-    kr.append(gc)
-    rc.append(gd)
-    opamp.append(ge)
-    spotlist(appno,na,kr,rc,opamp)
-    st.write(spotdf)
-  if finished:
+def forming():
+  st.session_state
+  if "appno" not in st.session_state:
+    st.session_state.appno=''
+  if "name" not in st.session_state:
+    st.session_state.name=''
+  if "keam" not in st.session_state:
+    st.session_state.keam=''
+  if "reserve" not in st.session_state:
+    st.session_state.reserve=''
+  if "opti" not in st.session_state:
+    st.session_state.opti=''
+  for item in st.session_state.items():
+    st.write(item)
+  with st.form("my_form",clear_on_submit=False):
+    ga=st.text_input('Application Number')
+    gb=st.text_input('Name')
+    gc=st.text_input('KEAM Rank')
+    gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
+    op=st.multiselect('Options', options)
+    ge=oplist(op)
+    st.session_state['opti']=str(st.session_state['opti'])+'#'+str(ge)
+    submitted=st.form_submit_button(label='Submit')
     finished=st.form_submit_button(label='Finish')
-    for key in st.session_state.key():
-      del st.session_state[key]
-    yield
+    if submitted:
+      st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)
+      st.session_state['name']=str(st.session_state['name'])+'#'+str(gb)
+      st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
+      st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
+      st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
+      for item in st.session_state.items():
+      st.write(item)
+      appno.append(ga)
+      na.append(gb)
+      kr.append(gc)
+      rc.append(gd)
+      opamp.append(ge)
+      spotlist(appno,na,kr,rc,opamp)
+      st.write(spotdf)
+    if finished:
+      finished=st.form_submit_button(label='Finish')
+      for key in st.session_state.key():
+        del st.session_state[key]
+      yield
     st.write("Failed")
 st.write("Hello World")

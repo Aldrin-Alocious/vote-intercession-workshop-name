@@ -245,4 +245,5 @@ def forming():
         del st.session_state[key]
       yield
     st.write("Failed")
+forming()
 st.write("Hello World")

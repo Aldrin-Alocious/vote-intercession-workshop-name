@@ -231,7 +231,7 @@ def forming():
       st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
       st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
       for item in st.session_state.items():
-      st.write(item)
+        st.write(item)
       appno.append(ga)
       na.append(gb)
       kr.append(gc)

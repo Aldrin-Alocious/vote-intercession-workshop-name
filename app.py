@@ -185,8 +185,6 @@ if "reserve" not in st.session_state:
   st.session_state.reserve=''
 if "opti" not in st.session_state:
   st.session_state.opti=''
-for item in st.session_state.items():
-  st.write(item)
 with st.form("my_form",clear_on_submit=False):
   ga=st.text_input('Application Number')
   gb=st.text_input('Name')

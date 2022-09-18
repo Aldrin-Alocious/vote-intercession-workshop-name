@@ -200,7 +200,7 @@ def spotlist(a,b,c,d,e):
 #for key in st.session_state.key():
 #  del st.session_state[key]
 #st.session_state
-"st.session_state object",st.session_state
+st.session_state
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -222,6 +222,7 @@ with st.form("my_form",clear_on_submit=False):
   ge=oplist(op)
   st.session_state['opti']=str(st.session_state['opti'])+'#'+str(ge)
   submitted=st.form_submit_button(label='Submit')
+  finished=st.form_submit_button(label='Finish')
   if submitted:
     st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)
     st.session_state['name']=str(st.session_state['name'])+'#'+str(gb)
@@ -237,4 +238,7 @@ with st.form("my_form",clear_on_submit=False):
     opamp.append(ge)
     spotlist(appno,na,kr,rc,opamp)
     st.write(spotdf)
-    #spotdf=spotdf.append([appno,na,kr,rc,op], ignore_index=False, verify_integrity=False, sort=None) finished=st.form_submit_button(label='Finish')
+  if finished:
+    finished=st.form_submit_button(label='Finish')
+    for key in st.session_state.key():
+      del st.session_state[key]

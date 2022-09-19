@@ -209,7 +209,7 @@ with st.form("my_form",clear_on_submit=False):
     st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
     st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
     st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
-    st.session_state['numer']+=1
+    st.session_state['numer']=st.session_state['numer']+1
     for item in st.session_state.items():
       st.write(item)
 finished=st.button(label='Finish')

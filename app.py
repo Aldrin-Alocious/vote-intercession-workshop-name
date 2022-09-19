@@ -175,13 +175,6 @@ def spotlist(a,b,c,d,e):
   spotdf['KEAM Rank']=c
   spotdf['Reservation Category']=d
   spotdf['Opted']=e
-def decode(ss,n):
-  y=[];
-  for i in range(1,n-1):
-    x=ss.partition('#')
-    y.append(str(x[0]))
-    ss=str(x[2])
-  return y
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -211,19 +204,6 @@ with st.form("my_form",clear_on_submit=False):
       st.write(item)
 finished=st.button(label='Finish')
 if finished:
-  a=st.session_state['appno'];
-  b=st.session_state['name'];
-  c=st.session_state['keam'];
-  d=st.session_state['reserve'];
-  e=st.session_state['options'];
-  f=5;
-  y1=decode(a,f)
-  y2=decode(b,f)
-  y3=decode(c,f)
-  y4=decode(d,f)
-  y5=decode(e,f)
-  y=spotlist(y1,y2,y3,y4,y5)
-  st.dataframe(y)
   st.session_state.appno=''
   st.session_state.name=''
   st.session_state.keam=''

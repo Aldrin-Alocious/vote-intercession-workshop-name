@@ -218,7 +218,7 @@ if finished:
   b=st.session_state['name'];
   c=st.session_state['keam'];
   d=st.session_state['reserve'];
-  e=st.session_state['options'];
+  e=st.session_state['opti'];
   f=int(st.session_state['numer']);
   y1=decode(a,f)
   y2=decode(b,f)

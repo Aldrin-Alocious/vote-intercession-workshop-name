@@ -180,7 +180,7 @@ def decode(ss,n):
   for i in range(1,n-1):
     x=ss.partition('#')
     y.append(str(x[0])
-    ss=x[2]
+    ss=x[2];
   return y
 if "appno" not in st.session_state:
   st.session_state.appno=''

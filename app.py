@@ -162,19 +162,11 @@ if vac7[0]>0:
   options.append('CL-SM')
 if vac7[1]>0:
   options.append('CL-MG')
-spotdf=pd.DataFrame()
 def oplist(op):
   c='';
   for i in range(0,np.size(op)):
     c=str(c)+' '+str(op[i])
   return c
-appno=[];na=[];kr=[];rc=[];opamp=[];
-def spotlist(a,b,c,d,e):
-  spotdf['Application Number']=a
-  spotdf['Name']=b
-  spotdf['KEAM Rank']=c
-  spotdf['Reservation Category']=d
-  spotdf['Opted']=e
 def decode(ss):
   y=[];
   for i in range(1,ss.count('#')):
@@ -221,8 +213,13 @@ if finished:
   y3=decode(c)
   y4=decode(d)
   y5=decode(e)
-  y=spotlist(y1,y2,y3,y4,y5)
-  st.dataframe(y)
+  spotdf=pd.DataFrame()
+  spotdf['Application Number']=y1
+  spotdf['Name']=y2
+  spotdf['KEAM Rank']=y3
+  spotdf['Reservation Category']=y4
+  spotdf['Opted']=y5
+  st.dataframe(spotdf)
   st.session_state.appno=''
   st.session_state.name=''
   st.session_state.keam=''

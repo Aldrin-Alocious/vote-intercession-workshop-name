@@ -175,9 +175,9 @@ def spotlist(a,b,c,d,e):
   spotdf['KEAM Rank']=c
   spotdf['Reservation Category']=d
   spotdf['Opted']=e
-def decode(ss,n):
+def decode(ss):
   y=[];
-  for i in range(1,n-1):
+  for i in range(1,ss.count('#')):
     x=ss.partition('#')
     y.append(str(x[0]))
     ss=str(x[2])

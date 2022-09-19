@@ -179,9 +179,9 @@ def decode(ss,n):
   y=[];
   for i in range(1,n-1):
     x=ss.partition('#')
-    y.append(str(x[0])
+    y.append(str(x[0]))
     st.write(x[2])
-    ss=str(x[2]);
+    ss=str(x[2])
   return y
 if "appno" not in st.session_state:
   st.session_state.appno=''

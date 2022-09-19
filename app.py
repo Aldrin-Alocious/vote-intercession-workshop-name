@@ -180,7 +180,6 @@ def decode(ss,n):
   for i in range(1,n-1):
     x=ss.partition('#')
     y.append(str(x[0]))
-    st.write(x[2])
     ss=str(x[2])
   return y
 if "appno" not in st.session_state:
@@ -193,6 +192,8 @@ if "reserve" not in st.session_state:
   st.session_state.reserve=''
 if "opti" not in st.session_state:
   st.session_state.opti=''
+if "numer" not in st.session_state:
+  st.session_state.numer=0
 with st.form("my_form",clear_on_submit=False):
   ga=st.text_input('Application Number')
   gb=st.text_input('Name')
@@ -208,6 +209,7 @@ with st.form("my_form",clear_on_submit=False):
     st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
     st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
     st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
+    st.session_state['numer']+=1
     for item in st.session_state.items():
       st.write(item)
 finished=st.button(label='Finish')
@@ -217,7 +219,14 @@ if finished:
   c=st.session_state['keam'];
   d=st.session_state['reserve'];
   e=st.session_state['options'];
-  
+  f=st.session_state['numer'];
+  y1=decode(a,f)
+  y2=decode(b,f)
+  y3=decode(c,f)
+  y4=decode(d,f)
+  y5=decode(e,f)
+  y=spotlist(y1,y2,y3,y4,y5)
+  st.dataframe(y)
   st.session_state.appno=''
   st.session_state.name=''
   st.session_state.keam=''

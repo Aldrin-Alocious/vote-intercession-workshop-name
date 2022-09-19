@@ -192,8 +192,6 @@ if "reserve" not in st.session_state:
   st.session_state.reserve=''
 if "opti" not in st.session_state:
   st.session_state.opti=''
-if "numer" not in st.session_state:
-  st.session_state.numer=''
 with st.form("my_form",clear_on_submit=False):
   ga=st.text_input('Application Number')
   gb=st.text_input('Name')
@@ -209,7 +207,6 @@ with st.form("my_form",clear_on_submit=False):
     st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
     st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
     st.session_state['options']=str(st.session_state['options'])+'#'+str(ge)
-    st.session_state['numer']=str(int(st.session_state['numer'])+1)
     for item in st.session_state.items():
       st.write(item)
 finished=st.button(label='Finish')
@@ -219,7 +216,7 @@ if finished:
   c=st.session_state['keam'];
   d=st.session_state['reserve'];
   e=st.session_state['options'];
-  f=st.session_state['numer'];
+  f=5;
   y1=decode(a,f)
   y2=decode(b,f)
   y3=decode(c,f)
@@ -232,6 +229,5 @@ if finished:
   st.session_state.keam=''
   st.session_state.reserve=''
   st.session_state.opti=''
-  st.session_state.numer=''
   exit()
   st.write("Failed")

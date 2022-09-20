@@ -222,8 +222,9 @@ if finished:
   spotdf['Reservation Category']=y4
   spotdf['Opted']=y5
   st.subheader("Spot Application List")
+  sdf=spotdf.to_csv().encode('utf-8')
   st.dataframe(spotdf)
-  st.download_button('Download file', spotdf)
+  st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
   st.session_state.appno=''
   st.session_state.name=''
   st.session_state.keam=''

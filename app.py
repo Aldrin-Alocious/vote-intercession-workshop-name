@@ -191,7 +191,6 @@ with st.form("my_form",clear_on_submit=False):
   gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
   ge=oplist(op)
-  st.session_state['opti']=str(st.session_state['opti'])+'#'+str(ge)
   submitted=st.form_submit_button(label='Submit')
   if submitted:
     st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)

@@ -224,7 +224,7 @@ if finished:
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
   st.dataframe(spotdf)
-  st.download_button("Press to Download",csv,"file.csv","text/csv",key='download-csv')
+  st.download_button("Press to Download",sdf,"file.csv","text/csv",key='download-csv')
   st.session_state.appno=''
   st.session_state.name=''
   st.session_state.keam=''

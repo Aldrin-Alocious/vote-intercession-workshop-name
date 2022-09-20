@@ -230,7 +230,6 @@ if finished:
   st.session_state.keam=''
   st.session_state.reserve=''
   st.session_state.opti=''
-  do_something()
   st.balloons()
   exit()
   st.write("Failed")

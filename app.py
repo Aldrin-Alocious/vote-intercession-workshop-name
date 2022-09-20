@@ -169,10 +169,11 @@ def oplist(op):
   return c
 def decode(ss):
   z=[];
-  for i in range(1,ss.count('#')):
+  for i in range(0,ss.count('#')):
     x=ss.partition('#')
     z.append(str(x[0]))
     ss=str(x[2])
+  z.append(ss)
   return z
 if "appno" not in st.session_state:
   st.session_state.appno=''

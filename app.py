@@ -171,7 +171,7 @@ def decode(ss):
   z=[];
   for i in range(0,ss.count('#')):
     x=ss.partition('#')
-    z.append(str(x[0]))
+    z.append(str(x[0]).strip())
     ss=str(x[2])
   z.append(ss)
   return z

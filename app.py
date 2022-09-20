@@ -224,6 +224,7 @@ if finished:
   spotdf['Opted']=y5
   st.subheader("Spot Application List")
   st.dataframe(spotdf)
+  st.download_button('Download file', data)
   st.session_state.appno=''
   st.session_state.name=''
   st.session_state.keam=''

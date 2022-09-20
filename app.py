@@ -132,6 +132,7 @@ vdf['Biotechnology']=vslashs(vac6,seat6)
 seat7=seats(CL)
 vac7=vacancies(CL)
 vdf['Civil Engineering']=vslashs(vac7,seat7)
+st.header("Vacancies and Seats")
 st.dataframe(vdf)
 options=[];
 if vac1[0]>0:
@@ -185,6 +186,7 @@ if "reserve" not in st.session_state:
   st.session_state.reserve=''
 if "opti" not in st.session_state:
   st.session_state.opti=''
+st.header("Form for Spot Entry")
 with st.form("my_form",clear_on_submit=True):
   ga=st.text_input('Application Number')
   gb=st.text_input('Name')
@@ -220,6 +222,7 @@ if finished:
   spotdf['KEAM Rank']=y3
   spotdf['Reservation Category']=y4
   spotdf['Opted']=y5
+  st.subheader("Spot Application List")
   st.dataframe(spotdf)
   st.session_state.appno=''
   st.session_state.name=''

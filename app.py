@@ -215,7 +215,6 @@ if finished:
   y3=decode(c)
   y4=decode(d)
   y5=decode(e)
-  st.write(y1)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
@@ -230,5 +229,7 @@ if finished:
   st.session_state.keam=''
   st.session_state.reserve=''
   st.session_state.opti=''
+  do_something()
+  st.balloons()
   exit()
   st.write("Failed")

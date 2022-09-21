@@ -7,25 +7,25 @@ st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
 st.write('NOTHING')
-dfz=df.copy()
-g=dfz[['Unnamed: 8']]
+#dfz=df.copy()
+g=df[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)
-h=dfz[['Unnamed: 6']]
+h=df[['Unnamed: 6']]
 h=h.to_numpy()
 h=np.array(h,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
-    dfz=dfz.drop([i])
+    df=df.drop([i])
 indice=[];
-k=dfz[['Unnamed: 8']]
+k=df[['Unnamed: 8']]
 k=k.to_numpy()
-dfz = dfz.reset_index(drop=True)
+df= df.reset_index(drop=True)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'
-dfz['Sree Chitra Thirunal College of Engineering']=indice
-st.dataframe(dfz)
+df['Sree Chitra Thirunal College of Engineering']=indice
+st.dataframe(df)
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()

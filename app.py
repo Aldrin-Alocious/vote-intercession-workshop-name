@@ -6,8 +6,6 @@ st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
-st.write('NOTHING')
-#dfz=df.copy()
 g=df[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)
@@ -20,7 +18,7 @@ for i in range(1,np.size(g)):
 indice=[];
 k=df[['Unnamed: 8']]
 k=k.to_numpy()
-df= df.reset_index(drop=True)
+df=df.reset_index(drop=True)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'

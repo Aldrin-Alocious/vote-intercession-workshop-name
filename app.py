@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
-dfz=pd.DataFrame()
-dfz=df;
+dfz=pd.read_csv(st.file_uploader('Upload a CSV'))
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)

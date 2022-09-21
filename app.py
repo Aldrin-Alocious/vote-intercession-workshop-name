@@ -20,7 +20,7 @@ k=df[['Unnamed: 8']]
 k=k.to_numpy()
 df=df.reset_index(drop=True)
 st.dataframe(df)
-df=df.copy(deep)
+df=df.copy(deep=True)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'

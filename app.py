@@ -5,7 +5,15 @@ import matplotlib.pyplot as plt
 st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
+dfz=df;
+g=dfz[['Unnamed: 8']]
+g=g.to_numpy()
+g=np.array(g,ndmin=2)
+for i in range(1,np.size(g)):
+  if g[i]=='Yes':
+    dfz.drop([i])
 st.dataframe(df)
+st.dataframe(dfz)
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()

@@ -15,11 +15,11 @@ h=np.array(h,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
     df=df.drop([i])
-st.write(df)
 indice=[];
 k=df[['Unnamed: 8']]
 k=k.to_numpy()
 df=df.reset_index(drop=True)
+st.write(df)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'

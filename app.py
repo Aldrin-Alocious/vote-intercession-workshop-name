@@ -6,21 +6,21 @@ st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
-g=df[['Unnamed: 8']]
+df=dfz
+g=dfz[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)
-h=df[['Unnamed: 6']]
+h=dfz[['Unnamed: 6']]
 h=h.to_numpy()
 h=np.array(h,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
-    df=df.drop([i])
+    dfz=dfz.drop([i])
 indice=[];
-k=df[['Unnamed: 8']]
+k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
-df=df.reset_index(drop=True)
-st.dataframe(df)
-df=df.copy(deep=True)
+dfz=dfz.reset_index(drop=True)
+st.dataframe(dfz)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'

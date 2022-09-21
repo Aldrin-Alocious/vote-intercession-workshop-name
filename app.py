@@ -19,11 +19,10 @@ indice=[];
 k=df[['Unnamed: 8']]
 k=k.to_numpy()
 df=df.reset_index(drop=True)
+st.dataframe(df)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'
-df['Sree Chitra Thirunal College of Engineering']=indice
-st.dataframe(df)
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()

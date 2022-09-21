@@ -11,7 +11,7 @@ g=g.to_numpy()
 g=np.array(g,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes':
-    dfz.drop([i])
+    dfz=dfz.drop([i])
 st.dataframe(df)
 st.dataframe(dfz)
 AN=df[['Unnamed: 3']]

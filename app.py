@@ -15,10 +15,10 @@ h=np.array(h,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
     dfz=dfz.drop([i])
-dfz=dfz.reset_index(drop=True)
 indice=[];
 k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
+dfz = dfz.reset_index(drop=True)
 for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'

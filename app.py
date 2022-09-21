@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
+st.dataframe(df)
+st.write('NOTHING')
 dfz=pd.read_csv(st.file_uploader('Upload a CSV'))
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()
@@ -23,8 +25,6 @@ for i in range(0,np.size(k)):
   indice.append(i)
 indice[0]='Sl No'
 dfz['Sree Chitra Thirunal College of Engineering']=indice
-st.dataframe(df)
-st.write('NOTHING')
 st.dataframe(dfz)
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]

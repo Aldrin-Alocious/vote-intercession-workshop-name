@@ -24,6 +24,7 @@ for i in range(0,np.size(k)):
 indice[0]='Sl No'
 dfz['Sree Chitra Thirunal College of Engineering']=indice
 st.dataframe(df)
+st.write('NOTHING')
 st.dataframe(dfz)
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]

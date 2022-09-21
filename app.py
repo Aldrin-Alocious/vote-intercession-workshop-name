@@ -241,7 +241,7 @@ if finished:
   spotdf['Opted']=y5
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
-  spotdf.sort_values('KEAM Rank')
+  spotdf=spotdf.sort_values('KEAM Rank')
   st.dataframe(spotdf)
   st.download_button("Press to Download",sdf,"file.csv","text/csv",key='download-csv')
   st.session_state.appno=''

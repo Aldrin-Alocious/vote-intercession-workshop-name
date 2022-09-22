@@ -247,18 +247,14 @@ if finished:
   y4=decode(d)
   y5=decode(e)
   n=len(y3)
-  swapped=False
   for i in range(n-1):
     for j in range(0,n-i-1):
       if y3[j]>y3[j + 1]:
-        swapped=True
         y1[j],y1[j + 1]=y1[j + 1],y1[j]
         y2[j],y2[j + 1]=y2[j + 1],y2[j]
         y3[j],y3[j + 1]=y3[j + 1],y3[j]
         y4[j],y4[j + 1]=y4[j + 1],y4[j]
         y5[j],y5[j + 1]=y5[j + 1],y5[j]
-    if not swapped:
-      return
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

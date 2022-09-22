@@ -242,6 +242,7 @@ if finished:
   for i in range(n-1):
     for j in range(0,n-i-1):
       if y3[j]>y3[j + 1]:
+        st.write("I love Sanju")
         switch(y1,j)
         switch(y2,j)
         switch(y3,j)

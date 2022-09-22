@@ -233,7 +233,6 @@ if finished:
   y3=decode(c)
   y4=decode(d)
   y5=decode(e)
-  y3=sorted(y3)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

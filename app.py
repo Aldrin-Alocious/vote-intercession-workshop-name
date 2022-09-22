@@ -82,6 +82,11 @@ def departments(a,b,d):
         c=c.append(df.loc[j], ignore_index=False, verify_integrity=False, sort=None)
         break
   return c
+def switch(yash,n):
+  temp=yash[n]
+  yash[n]=yash[n+1]
+  yash[n+1]=temp
+  return yash
 AI=departments(AN,AIE,df)
 CS=departments(AN,CSE,df)
 EC=departments(AN,ECE,df)
@@ -194,19 +199,6 @@ def decode(ss):
     ss=str(x[2])
   z.append(ss)
   return z
-def bubbleSort(p,q,r,s,t):
-  n=len(r)
-  for i in range(n-1):
-    for j in range(0,n-i-1):
-      if r[j]>r[j + 1]:
-        swapped=True
-        p[j],p[j + 1]=p[j + 1],p[j]
-        q[j],q[j + 1]=r[j + 1],q[j]
-        r[j],r[j + 1]=r[j + 1],r[j]
-        s[j],s[j + 1]=s[j + 1],s[j]
-        t[j],t[j + 1]=t[j + 1],t[j]
-    if not swapped:
-      return
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -250,11 +242,11 @@ if finished:
   for i in range(n-1):
     for j in range(0,n-i-1):
       if y3[j]>y3[j + 1]:
-        y1[j],y1[j + 1]=y1[j + 1],y1[j]
-        y2[j],y2[j + 1]=y2[j + 1],y2[j]
-        y3[j],y3[j + 1]=y3[j + 1],y3[j]
-        y4[j],y4[j + 1]=y4[j + 1],y4[j]
-        y5[j],y5[j + 1]=y5[j + 1],y5[j]
+        switch(y1,j)
+        switch(y2,j)
+        switch(y3,j)
+        switch(y4,j)
+        switch(y5,j)
   st.write(y3)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1

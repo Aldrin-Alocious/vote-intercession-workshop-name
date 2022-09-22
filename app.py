@@ -194,6 +194,19 @@ def decode(ss):
     ss=str(x[2])
   z.append(ss)
   return z
+def bubbleSort(p,q,r,s,t):
+  n=len(r)
+  for i in range(n-1):
+    for j in range(0,n-i-1):
+      if r[j]>r[j + 1]:
+        swapped=True
+        p[j],p[j + 1]=p[j + 1],p[j]
+        q[j],q[j + 1]=r[j + 1],q[j]
+        r[j],r[j + 1]=r[j + 1],r[j]
+        s[j],s[j + 1]=s[j + 1],s[j]
+        t[j],t[j + 1]=t[j + 1],t[j]
+    if not swapped:
+      return
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -233,6 +246,19 @@ if finished:
   y3=decode(c)
   y4=decode(d)
   y5=decode(e)
+  n=len(y3)
+  swapped=False
+  for i in range(n-1):
+    for j in range(0,n-i-1):
+      if y3[j]>y3[j + 1]:
+        swapped=True
+        y1[j],y1[j + 1]=y1[j + 1],y1[j]
+        y2[j],y2[j + 1]=y2[j + 1],y2[j]
+        y3[j],y3[j + 1]=y3[j + 1],y3[j]
+        y4[j],y4[j + 1]=y4[j + 1],y4[j]
+        y5[j],y5[j + 1]=y5[j + 1],y5[j]
+    if not swapped:
+      return
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

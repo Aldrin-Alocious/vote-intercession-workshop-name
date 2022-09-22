@@ -255,6 +255,7 @@ if finished:
         y3[j],y3[j + 1]=y3[j + 1],y3[j]
         y4[j],y4[j + 1]=y4[j + 1],y4[j]
         y5[j],y5[j + 1]=y5[j + 1],y5[j]
+  st.write(y3)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

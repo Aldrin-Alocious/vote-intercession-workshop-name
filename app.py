@@ -233,7 +233,7 @@ if finished:
   y3=decode(c)
   y4=decode(d)
   y5=decode(e)
-  n=len(y3)
+  size=len(y3)
   for ind in range(size):
         min_index = ind
         for j in range(ind + 1, size):

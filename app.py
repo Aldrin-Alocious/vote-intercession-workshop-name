@@ -241,18 +241,6 @@ if finished:
   y3=decodeRank(c)
   y4=decode(d)
   y5=decode(e)
-  size=len(y3)
-  for ind in range(size):
-        min_index = ind
-        for j in range(ind + 1, size):
-            if y3[j] < y3[min_index]:
-                min_index = j
-        (y1[ind], y1[min_index]) = (y1[min_index], y1[ind])
-        (y2[ind], y2[min_index]) = (y2[min_index], y2[ind])
-        (y3[ind], y3[min_index]) = (y3[min_index], y3[ind])
-        (y4[ind], y4[min_index]) = (y4[min_index], y4[ind])
-        (y5[ind], y5[min_index]) = (y5[min_index], y5[ind])
-  st.write(y3)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

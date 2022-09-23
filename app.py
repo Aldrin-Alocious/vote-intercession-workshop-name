@@ -82,11 +82,6 @@ def departments(a,b,d):
         c=c.append(df.loc[j], ignore_index=False, verify_integrity=False, sort=None)
         break
   return c
-def switch(yash,n):
-  temp=yash[n-1]
-  yash[n-1]=yash[n]
-  yash[n]=temp
-  return yash
 AI=departments(AN,AIE,df)
 CS=departments(AN,CSE,df)
 EC=departments(AN,ECE,df)
@@ -239,14 +234,16 @@ if finished:
   y4=decode(d)
   y5=decode(e)
   n=len(y3)
-  for i in range(n-1):
-    for j in range(0,n-i):
-      if y3[j-1]>y3[j]:
-        switch(y1,j)
-        switch(y2,j)
-        switch(y3,j)
-        switch(y4,j)
-        switch(y5,j)
+  for ind in range(size):
+        min_index = ind
+        for j in range(ind + 1, size):
+            if y3[j] < y3[min_index]:
+                min_index = j
+        (y1[ind], y1[min_index]) = (y1[min_index], y1[ind])
+        (y2[ind], y2[min_index]) = (y2[min_index], y2[ind])
+        (y3[ind], y3[min_index]) = (y3[min_index], y3[ind])
+        (y4[ind], y4[min_index]) = (y4[min_index], y4[ind])
+        (y5[ind], y5[min_index]) = (y5[min_index], y5[ind])
   st.write(y3)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1

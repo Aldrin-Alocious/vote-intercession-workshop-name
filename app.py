@@ -194,6 +194,14 @@ def decode(ss):
     ss=str(x[2])
   z.append(ss)
   return z
+def decodeRank(ss):
+  z=[];
+  for i in range(0,ss.count('#')):
+    x=ss.partition('#')
+    z.append(int(x[0]).strip())
+    ss=str(x[2])
+  z.append(int(ss))
+  return z
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -230,7 +238,7 @@ if finished:
   e=st.session_state['opti'].lstrip('#');
   y1=decode(a)
   y2=decode(b)
-  y3=decode(c)
+  y3=decodeRank(c)
   y4=decode(d)
   y5=decode(e)
   size=len(y3)

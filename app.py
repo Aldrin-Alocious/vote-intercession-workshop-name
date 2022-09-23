@@ -83,9 +83,9 @@ def departments(a,b,d):
         break
   return c
 def switch(yash,n):
-  temp=yash[n]
-  yash[n]=yash[n+1]
-  yash[n+1]=temp
+  temp=yash[n-1]
+  yash[n-1]=yash[n]
+  yash[n]=temp
   return yash
 AI=departments(AN,AIE,df)
 CS=departments(AN,CSE,df)
@@ -239,11 +239,9 @@ if finished:
   y4=decode(d)
   y5=decode(e)
   n=len(y3)
-  st.write(n)
   for i in range(n-1):
-    for j in range(0,n-i-1):
-      if y3[j]>y3[j + 1]:
-        st.write("I love Sanju")
+    for j in range(0,n-i):
+      if y3[j-1]>y3[j]:
         switch(y1,j)
         switch(y2,j)
         switch(y3,j)

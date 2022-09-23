@@ -198,7 +198,7 @@ def decodeRank(ss):
   z=[];
   for i in range(0,ss.count('#')):
     x=ss.partition('#')
-    z.append(int(x[0]).strip())
+    z.append(int(x[0]))
     ss=str(x[2])
   z.append(int(ss))
   return z

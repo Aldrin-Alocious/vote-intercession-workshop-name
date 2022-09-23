@@ -192,7 +192,7 @@ def decode(ss):
     x=ss.partition('#')
     z.append(str(x[0]).strip())
     ss=str(x[2])
-  z.append(ss)
+  z.append(ss.strip())
   return z
 def decodeRank(ss):
   z=[];

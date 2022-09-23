@@ -239,6 +239,7 @@ if finished:
   y4=decode(d)
   y5=decode(e)
   n=len(y3)
+  st.write(n)
   for i in range(n-1):
     for j in range(0,n-i-1):
       if y3[j]>y3[j + 1]:

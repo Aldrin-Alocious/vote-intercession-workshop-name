@@ -231,8 +231,8 @@ def find(stw,c):
   n=dfz[['Unnamed: 7']];
   n=n.to_numpy();
   for i in range(1,np.size(k)):
-    if n==c:
-      if l==a and m==b:
+    if n[i]==c:
+      if l[i]==a and m[i]==b:
         return i
   return 0
 def listop(stv):

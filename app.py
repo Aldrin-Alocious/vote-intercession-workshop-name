@@ -231,8 +231,7 @@ def find(stw,c):
   for i in range(1,np.size(l)):
     if n[i]==c:
       if l[i]==a and m[i]==b:
-        dfz=dfz.drop([i])
-        return 1
+        return i
   return 0
 def listop(stv):
   z=[];
@@ -302,9 +301,11 @@ if finished:
       pq=len(pp)
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
-        if pr==1:
+        if pr>0:
           y7[i]=pp[j]
-          break
+          dfz=dfz.drop([pr])
+          dfz=dfz.reset_index(drop=True)
+          break;
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

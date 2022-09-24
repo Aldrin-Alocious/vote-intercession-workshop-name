@@ -244,6 +244,32 @@ def search(stp):
   for i in range(0,np.size(NA)):
     if NA[i]==stp:
       dfz.loc[len(dfz.index)]=df.loc[stp]
+      dfz=dfz.reset_index(drop=True)
+  l=dfz[['Unnamed: 4']];
+  l=l.to_numpy();
+  m=dfz[['Unnamed: 6']];
+  m=m.to_numpy();
+  fgh=l[np.size(NA)]
+  fgi=m[np.size(NA)]
+  if fgh=='Artificial Intelligence And Machine Learning':
+    ret='AI'
+  elif fgh=='Computer Science':
+    ret='CS'
+  elif fgh=='Electronics and Communication':
+    ret='EC'
+  elif fgh=='Mechanical':
+    ret='ME'
+  elif fgh=='Mechanical Automobile':
+    ret='MA'
+  elif fgh=='Biotechnology':
+    ret='BT'
+  elif fgh=='Civil':
+    ret='CL'
+  if fgi=='Merit':
+    set='SM'
+  elif fgi=='Management Quota':
+    set='MG'
+  return ret+'-'+set
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -311,7 +337,12 @@ if finished:
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
         if pr>0:
-          y7[i]=pp[j]
+          if y6[i]=='Yes':
+            res=search(y2[i])
+          else:
+            res=''
+          y7[i]=res+' to '+pp[j]
+          y7[i]=y7[i].lstrip(' to')
           dfz=dfz.drop([pr])
           dfz=dfz.reset_index(drop=True)
           break;

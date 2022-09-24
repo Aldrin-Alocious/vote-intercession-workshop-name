@@ -21,9 +21,6 @@ k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
 dfz=dfz.reset_index(drop=True)
 st.dataframe(dfz)
-for i in range(0,np.size(k)):
-  indice.append(i)
-indice[0]='Sl No'
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()
@@ -241,12 +238,12 @@ def listop(stv):
     stv=str(x[2])
   z.append(stv)
   return z
-def remove(stu):
-  k=dfz[['Name']];
-  k=k.to_numpy();
-  for i in range(0,np.size(k)):
-    if k[i]==stu:
-      dfz=dfz.drop([i])
+def search(stp):
+  NA=df[['Unnamed: 2']]
+  NA=NA.to_numpy()
+  for i in range(0,np.size(NA)):
+    if NA[i]==stp:
+      dfz.loc[len(dfz.index)]=df.loc[stp]
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:

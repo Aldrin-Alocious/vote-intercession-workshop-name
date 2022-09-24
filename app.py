@@ -202,6 +202,53 @@ def decodeRank(ss):
     ss=str(x[2])
   z.append(int(ss))
   return z
+def find(stw,c):
+  x=stw.partition('-')
+  if x[0]=='AI':
+    a='Artificial Intelligence And Machine Learning'
+  elif x[0]=='CS':
+    a='Computer Science'
+  elif x[0]=='EC':
+    a='Electronics and Communication'
+  elif x[0]=='ME':
+    a='Mechanical'
+  elif x[0]=='MA':
+    a='Mechanical Automobile'
+  elif x[0]=='BT':
+    a='Biotechnology'
+  elif x[0]=='CL':
+    a='Civil'
+  if x[2]=='SM':
+    b='Merit'
+  elif x[2]=='MG':
+    b='Management Quota'
+  k=dfz[['Name']];
+  k=k.to_numpy();
+  l=dfz[['Unnamed: 4']];
+  l=l.to_numpy();
+  m=dfz[['Unnamed: 6']];
+  m=m.to_numpy();
+  n=dfz[['Unnamed: 7']];
+  n=n.to_numpy();
+  for i in range(0,np.size(k)):
+    if n==c:
+      if l==a and m==b:
+        return i
+  return 0
+def listop(stv):
+  z=[];
+  for i in range(0,stv.count(' ')):
+    x=stv.partition(' ')
+    z.append(x[0])
+    stv=str(x[2])
+  z.append(stv)
+  return z
+def remove(stu):
+  k=dfz[['Name']];
+  k=k.to_numpy();
+  for i in range(0,np.size(k)):
+    if k[i]==stu:
+      dfz=dfz.drop([i])
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -250,6 +297,17 @@ if finished:
   y7=[];
   for i in range(0,len(y6)):
     y7.append('')
+  for i in range(0,len(y6)):
+    if not(y4[i]=='General'):
+      pp=listop(y5[i])
+      pq=len(pp)
+      for j in range(0,pq):
+        pr=find(pp[j],y4[i])
+        if pr>0:
+          y7[i]=pp[j]
+          remove(y2[i])
+          break
+    break
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

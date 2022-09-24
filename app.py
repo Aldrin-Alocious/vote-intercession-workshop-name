@@ -292,6 +292,18 @@ if finished:
   y4=decode(d)
   y5=decode(e)
   y6=decode(f)
+  size=len(y3)
+  for ind in range(size):
+        min_index = ind
+        for j in range(ind + 1, size):
+            if y3[j] < y3[min_index]:
+                min_index = j
+        (y1[ind], y1[min_index]) = (y1[min_index], y1[ind])
+        (y2[ind], y2[min_index]) = (y2[min_index], y2[ind])
+        (y3[ind], y3[min_index]) = (y3[min_index], y3[ind])
+        (y4[ind], y4[min_index]) = (y4[min_index], y4[ind])
+        (y5[ind], y5[min_index]) = (y5[min_index], y5[ind])
+        (y6[ind], y6[min_index]) = (y6[min_index], y6[ind])
   y7=[];
   for i in range(0,len(y6)):
     y7.append('HIGHER OPTION')
@@ -327,7 +339,7 @@ if finished:
   spotdf['Alloted']=y7
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
-  spotdf=spotdf.sort_values('KEAM Rank')
+  #spotdf=spotdf.sort_values('KEAM Rank')
   spotdf=spotdf.reset_index(drop=True)
   st.dataframe(spotdf)
   st.download_button("Press to Download",sdf,"file.csv","text/csv",key='download-csv')

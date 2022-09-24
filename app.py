@@ -333,4 +333,4 @@ if finished:
   st.session_state.sctian=''
   st.balloons()
   exit()
-  st.write("Failed") =
+  st.write("Failed")

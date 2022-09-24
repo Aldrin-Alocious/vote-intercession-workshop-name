@@ -229,7 +229,7 @@ def find(stw,c):
   n=dfz[['Unnamed: 7']];
   n=n.to_numpy();
   for i in range(1,np.size(l)):
-    if n[i]==c:
+    if n[i]==c or n[i]=='jump':
       if l[i]==a and m[i]==b:
         return i
   return 0
@@ -294,13 +294,24 @@ if finished:
   y6=decode(f)
   y7=[];
   for i in range(0,len(y6)):
-    y7.append('')
+    y7.append('HIGHER OPTION')
   for i in range(0,len(y6)):
     if not(y4[i]=='General'):
       pp=listop(y5[i])
       pq=len(pp)
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
+        if pr>0:
+          y7[i]=pp[j]
+          dfz=dfz.drop([pr])
+          dfz=dfz.reset_index(drop=True)
+          break;
+  for i in range(0,len(y6)):
+    if not(y7[i]=='HIGHER OPTION'):
+      pp=listop(y5[i])
+      pq=len(pp)
+      for j in range(0,pq):
+        pr=find(pp[j],'jump')
         if pr>0:
           y7[i]=pp[j]
           dfz=dfz.drop([pr])

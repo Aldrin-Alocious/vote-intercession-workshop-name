@@ -247,6 +247,9 @@ if finished:
   y4=decode(d)
   y5=decode(e)
   y6=decode(f)
+  y7=[];
+  for i in range(0,len(y6)):
+    y7.append('')
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
@@ -254,6 +257,7 @@ if finished:
   spotdf['Reservation Category']=y4
   spotdf['Opted']=y5
   spotdf['Already Admitted']=y6
+  spotdf['Alloted']=y7
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
   spotdf=spotdf.sort_values('KEAM Rank')

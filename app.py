@@ -229,7 +229,7 @@ def find(stw,c):
   n=dfz[['Unnamed: 7']];
   n=n.to_numpy();
   for i in range(1,np.size(l)):
-    if n[i]==c or n[i]=='jump':
+    if n[i]==c or c=='jump':
       if l[i]==a and m[i]==b:
         return i
   return 0

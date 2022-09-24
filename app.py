@@ -249,6 +249,9 @@ def remove(stu):
   for i in range(0,np.size(k)):
     if k[i]==stu:
       dfz=dfz.drop([i])
+def update(stx):
+  dfz=dfz.drop([i])
+  st.dataframe(dfz)
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -305,7 +308,7 @@ if finished:
         pr=find(pp[j],y4[i])
         if pr>0:
           y7[i]=pp[j]
-          remove(y2[i])
+          update(pr)
           break
     break
   spotdf=pd.DataFrame()
@@ -330,4 +333,4 @@ if finished:
   st.session_state.sctian=''
   st.balloons()
   exit()
-  st.write("Failed")
+  st.write("Failed") =

@@ -222,7 +222,7 @@ def find(stw,c):
     b='Merit'
   elif x[2]=='MG':
     b='Management Quota'
-  k=dfz[['Name']];
+  k=dfz[['Unnamed: 2']];
   k=k.to_numpy();
   l=dfz[['Unnamed: 4']];
   l=l.to_numpy();

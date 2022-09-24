@@ -212,6 +212,8 @@ if "reserve" not in st.session_state:
   st.session_state.reserve=''
 if "opti" not in st.session_state:
   st.session_state.opti=''
+if "sctian" not in st.session_state:
+  st.session_state.sctian=''
 st.header("Form for Spot Entry")
 with st.form("my_form",clear_on_submit=True):
   ga=st.text_input('Application Number')
@@ -220,6 +222,7 @@ with st.form("my_form",clear_on_submit=True):
   gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
   op=st.multiselect('Options', options)
   ge=oplist(op)
+  gf=st.selectbox('Already admitted?',['No','Yes'])
   submitted=st.form_submit_button(label='Submit')
   if submitted:
     st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)
@@ -227,6 +230,7 @@ with st.form("my_form",clear_on_submit=True):
     st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
     st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
     st.session_state['opti']=str(st.session_state['opti'])+'#'+str(ge)
+    st.session_state['sctian']=str(st.session_state['sctian'])+'#'+str(gf)
     for item in st.session_state.items():
       st.write(item)
 finished=st.button(label='Finish')
@@ -236,17 +240,20 @@ if finished:
   c=st.session_state['keam'].lstrip('#');
   d=st.session_state['reserve'].lstrip('#');
   e=st.session_state['opti'].lstrip('#');
+  f=st.session_state['sctian'].lstrip('#');
   y1=decode(a)
   y2=decode(b)
   y3=decodeRank(c)
   y4=decode(d)
   y5=decode(e)
+  y6=decode(f)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
   spotdf['KEAM Rank']=y3
   spotdf['Reservation Category']=y4
   spotdf['Opted']=y5
+  spotdf['Already Admitted']=y6
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
   spotdf=spotdf.sort_values('KEAM Rank')
@@ -258,6 +265,7 @@ if finished:
   st.session_state.keam=''
   st.session_state.reserve=''
   st.session_state.opti=''
+  st.session_state.sctian=''
   st.balloons()
   exit()
   st.write("Failed")

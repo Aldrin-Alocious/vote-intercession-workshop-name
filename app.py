@@ -233,7 +233,8 @@ def find(stw,c):
   for i in range(1,np.size(k)):
     if n[i]==c:
       if l[i]==a and m[i]==b:
-        return i
+        dfz=dfz.drop([i])
+        return 1
   return 0
 def listop(stv):
   z=[];
@@ -249,8 +250,6 @@ def remove(stu):
   for i in range(0,np.size(k)):
     if k[i]==stu:
       dfz=dfz.drop([i])
-def update(stx):
-  dfz=dfz.drop([stx])
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:
@@ -305,11 +304,9 @@ if finished:
       pq=len(pp)
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
-        if pr>0:
+        if pr==1:
           y7[i]=pp[j]
-          update(pr)
           break
-    break
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

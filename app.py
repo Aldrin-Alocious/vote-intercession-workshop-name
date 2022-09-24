@@ -230,7 +230,7 @@ def find(stw,c):
   m=m.to_numpy();
   n=dfz[['Unnamed: 7']];
   n=n.to_numpy();
-  for i in range(0,np.size(k)):
+  for i in range(1,np.size(k)):
     if n==c:
       if l==a and m==b:
         return i
@@ -250,8 +250,7 @@ def remove(stu):
     if k[i]==stu:
       dfz=dfz.drop([i])
 def update(stx):
-  dfz=dfz.drop([i])
-  st.dataframe(dfz)
+  dfz=dfz.drop([stx])
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:

@@ -222,15 +222,13 @@ def find(stw,c):
     b='Merit'
   elif x[2]=='MG':
     b='Management Quota'
-  k=dfz[['Unnamed: 2']];
-  k=k.to_numpy();
   l=dfz[['Unnamed: 4']];
   l=l.to_numpy();
   m=dfz[['Unnamed: 6']];
   m=m.to_numpy();
   n=dfz[['Unnamed: 7']];
   n=n.to_numpy();
-  for i in range(1,np.size(k)):
+  for i in range(1,np.size(l)):
     if n[i]==c:
       if l[i]==a and m[i]==b:
         dfz=dfz.drop([i])

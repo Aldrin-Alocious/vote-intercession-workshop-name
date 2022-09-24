@@ -226,7 +226,7 @@ with st.form("my_form",clear_on_submit=True):
   submitted=st.form_submit_button(label='Submit')
   if submitted:
     st.session_state['appno']=str(st.session_state['appno'])+'#'+str(ga)
-    st.session_state['name']=str(st.session_state['name'])+'#'+str(gb)
+    st.session_state['name']=str(st.session_state['name'])+'#'+str(gb).upper()
     st.session_state['keam']=str(st.session_state['keam'])+'#'+str(gc)
     st.session_state['reserve']=str(st.session_state['reserve'])+'#'+str(gd)
     st.session_state['opti']=str(st.session_state['opti'])+'#'+str(ge)

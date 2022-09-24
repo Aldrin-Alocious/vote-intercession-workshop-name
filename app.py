@@ -307,7 +307,7 @@ if finished:
           dfz=dfz.reset_index(drop=True)
           break;
   for i in range(0,len(y6)):
-    if not(y7[i]=='HIGHER OPTION'):
+    if y7[i]=='HIGHER OPTION':
       pp=listop(y5[i])
       pq=len(pp)
       for j in range(0,pq):

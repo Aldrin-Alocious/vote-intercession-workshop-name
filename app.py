@@ -339,7 +339,6 @@ if finished:
   spotdf['Alloted']=y7
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
-  #spotdf=spotdf.sort_values('KEAM Rank')
   spotdf=spotdf.reset_index(drop=True)
   st.dataframe(spotdf)
   st.download_button("Press to Download",sdf,"file.csv","text/csv",key='download-csv')

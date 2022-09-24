@@ -326,6 +326,7 @@ if finished:
   st.session_state.reserve=''
   st.session_state.opti=''
   st.session_state.sctian=''
+  st.dataframe(dfz)
   st.balloons()
   exit()
   st.write("Failed")

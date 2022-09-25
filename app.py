@@ -243,14 +243,15 @@ def search(stp):
   NA=NA.to_numpy()
   for i in range(0,np.size(NA)):
     if NA[i]==stp:
-      dfz.loc[len(dfz.index)]=df.loc[stp]
+      dfz.loc[len(dfz.index)]=df.loc[i]
       dfz=dfz.reset_index(drop=True)
+      break;
   l=dfz[['Unnamed: 4']];
   l=l.to_numpy();
   m=dfz[['Unnamed: 6']];
   m=m.to_numpy();
-  fgh=l[np.size(NA)]
-  fgi=m[np.size(NA)]
+  fgh=l[np.size(l)-1]
+  fgi=m[np.size(m)-1]
   if fgh=='Artificial Intelligence And Machine Learning':
     ret='AI'
   elif fgh=='Computer Science':
@@ -266,10 +267,10 @@ def search(stp):
   elif fgh=='Civil':
     ret='CL'
   if fgi=='Merit':
-    set='SM'
+    tet='SM'
   elif fgi=='Management Quota':
-    set='MG'
-  return ret+'-'+set
+    tet='MG'
+  return ret+'-'+tet
 if "appno" not in st.session_state:
   st.session_state.appno=''
 if "name" not in st.session_state:

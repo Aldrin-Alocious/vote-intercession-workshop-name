@@ -343,8 +343,10 @@ if finished:
         pr=find(pp[j],y4[i])
         if pr>0:
           if y6[i]=='Yes':
+            st.write('IMHERE')
             res=search(y2[i])
           else:
+            st.write('Not there')
             res=''
           y7[i]=res+' to '+pp[j]
           y7[i]=y7[i].lstrip(' to')

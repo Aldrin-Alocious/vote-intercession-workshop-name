@@ -241,10 +241,14 @@ def listop(stv):
 def search(stp):
   NA=df[['Unnamed: 2']]
   NA=NA.to_numpy()
+  st.write('DEAR')
+  st.dataframe(dfz)
   for i in range(0,np.size(NA)):
     if NA[i]==stp:
       dfz.loc[len(dfz.index)]=df.loc[i]
       dfz=dfz.reset_index(drop=True)
+      st.write('DEAR')
+      st.dataframe(dfz)
       break;
   l=dfz[['Unnamed: 4']];
   l=l.to_numpy();

@@ -241,13 +241,11 @@ def listop(stv):
 def search(stp):
   NA=df[['Unnamed: 2']]
   NA=NA.to_numpy()
-  st.write('DEAR')
   st.dataframe(dfz)
   for i in range(0,np.size(NA)):
     if NA[i]==stp:
       dfz.loc[len(dfz.index)]=df.loc[i]
       dfz=dfz.reset_index(drop=True)
-      st.write('DEAR')
       st.dataframe(dfz)
       break;
   l=dfz[['Unnamed: 4']];
@@ -342,18 +340,21 @@ if finished:
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
         if pr>0:
-          if y6[i]=='Yes':
-            st.write('IMHERE')
-            res=search(y2[i])
-          else:
-            st.write('Not there')
-            res=''
-          y7[i]=res+' to '+pp[j]
-          y7[i]=y7[i].lstrip(' to')
+          y7[i]=pp[j]
           dfz=dfz.drop([pr])
           dfz=dfz.reset_index(drop=True)
           break;
-  
+  for i in range(0,len(y6)):
+    if y7[i]=='HIGHER OPTION':
+      pp=listop(y5[i])
+      pq=len(pp)
+      for j in range(0,pq):
+        pr=find(pp[j],'jump')
+        if pr>0:
+          y7[i]=pp[j]
+          dfz=dfz.drop([pr])
+          dfz=dfz.reset_index(drop=True)
+          break;
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
@@ -373,6 +374,7 @@ if finished:
   st.session_state.reserve=''
   st.session_state.opti=''
   st.session_state.sctian=''
+  print(search('ALDRIN A'))
   st.dataframe(dfz)
   st.balloons()
   exit()

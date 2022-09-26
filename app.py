@@ -353,17 +353,7 @@ if finished:
           dfz=dfz.drop([pr])
           dfz=dfz.reset_index(drop=True)
           break;
-  for i in range(0,len(y6)):
-    if y7[i]=='HIGHER OPTION':
-      pp=listop(y5[i])
-      pq=len(pp)
-      for j in range(0,pq):
-        pr=find(pp[j],'jump')
-        if pr>0:
-          y7[i]=pp[j]
-          dfz=dfz.drop([pr])
-          dfz=dfz.reset_index(drop=True)
-          break;
+  
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

@@ -374,7 +374,7 @@ if finished:
   st.session_state.reserve=''
   st.session_state.opti=''
   st.session_state.sctian=''
-  print(search('ALDRIN A'))
+  st.write(search('ALDRIN A'))
   st.dataframe(dfz)
   st.balloons()
   exit()

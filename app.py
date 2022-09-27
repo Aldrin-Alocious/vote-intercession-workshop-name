@@ -314,31 +314,33 @@ if finished:
                 dfz.loc[len(dfz.index)]=df.loc[i]
                 dfz=dfz.reset_index(drop=True)
                 break;
-             l=dfz[['Unnamed: 4']];
-             l=l.to_numpy();
-             m=dfz[['Unnamed: 6']];
-             m=m.to_numpy();
-             fgh=l[np.size(l)-1]
-             fgi=m[np.size(m)-1]
-             if fgh=='Artificial Intelligence And Machine Learning':
-               ret='AI'
-             elif fgh=='Computer Science':
-               ret='CS'
-             elif fgh=='Electronics and Communication':
-               ret='EC'
-             elif fgh=='Mechanical':
-               ret='ME'
-             elif fgh=='Mechanical Automobile':
-               ret='MA'
-             elif fgh=='Biotechnology':
-               ret='BT'
-             elif fgh=='Civil':
-               ret='CL'
-             if fgi=='Merit':
-               tet='SM'
-             elif fgi=='Management Quota':
-               tet='MG'
-             y7[i]=ret+'-'+tet+' to '+pp[j]
+              l=dfz[['Unnamed: 4']];
+              l=l.to_numpy();
+              m=dfz[['Unnamed: 6']];
+              m=m.to_numpy();
+              fgh=l[np.size(l)-1]
+              fgi=m[np.size(m)-1]
+              if fgh=='Artificial Intelligence And Machine Learning':
+                ret='AI'
+              elif fgh=='Computer Science':
+                ret='CS'
+              elif fgh=='Electronics and Communication':
+                ret='EC'
+              elif fgh=='Mechanical':
+                ret='ME'
+              elif fgh=='Mechanical Automobile':
+                ret='MA'
+              elif fgh=='Biotechnology':
+                ret='BT'
+              elif fgh=='Civil':
+                ret='CL'
+              if fgi=='Merit':
+                tet='SM'
+              elif fgi=='Management Quota':
+                tet='MG'
+              y7[i]=ret+'-'+tet+' to '+pp[j]
+              dfz=dfz.drop([pr])
+              dfz=dfz.reset_index(drop=True)
           else:
             y7[i]=pp[j]
             dfz=dfz.drop([pr])

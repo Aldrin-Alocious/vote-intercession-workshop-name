@@ -360,7 +360,7 @@ if finished:
           dfz=dfz.reset_index(drop=True)
           break;
   spotdf=pd.DataFrame()
-  st.write(y6)
+  st.write(y6[0])
   spotdf['Application Number']=y1
   spotdf['Name']=y2
   spotdf['KEAM Rank']=y3

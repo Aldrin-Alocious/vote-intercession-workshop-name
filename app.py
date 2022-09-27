@@ -380,5 +380,6 @@ if finished:
   st.session_state.sctian=''
   st.dataframe(dfz)
   st.balloons()
+  st.write('superb')
   exit()
   st.write("Failed")

@@ -305,6 +305,7 @@ if finished:
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
         if pr>0:
+          st.write(y6[i])
           if y6[i]=='Yes':
             st.write('in')
             stp=y2[i]

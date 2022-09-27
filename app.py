@@ -306,6 +306,7 @@ if finished:
         pr=find(pp[j],y4[i])
         if pr>0:
           if y6[i]=='Yes':
+            st.write('in')
             stp=y2[i]
             NA=df[['Unnamed: 2']]
             NA=NA.to_numpy()

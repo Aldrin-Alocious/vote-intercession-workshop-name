@@ -360,6 +360,7 @@ if finished:
           dfz=dfz.reset_index(drop=True)
           break;
   spotdf=pd.DataFrame()
+  st.write(y6)
   spotdf['Application Number']=y1
   spotdf['Name']=y2
   spotdf['KEAM Rank']=y3
@@ -380,6 +381,5 @@ if finished:
   st.session_state.sctian=''
   st.dataframe(dfz)
   st.balloons()
-  st.write('superb')
   exit()
   st.write("Failed")

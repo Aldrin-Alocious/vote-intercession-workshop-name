@@ -304,6 +304,7 @@ if finished:
       pq=len(pp)
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
+        st.write(pr)
         if pr>0:
           st.write(y6[i])
           if y6[i]=='Yes':

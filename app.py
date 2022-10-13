@@ -309,9 +309,9 @@ if finished:
             stp=y2[i]
             NA=df[['Unnamed: 2']]
             NA=NA.to_numpy()
-            for i in range(0,np.size(NA)):
-              if NA[i]==stp:
-                dfz.loc[len(dfz.index)]=df.loc[i]
+            for k in range(0,np.size(NA)):
+              if NA[k]==stp:
+                dfz.loc[len(dfz.index)]=df.loc[k]
                 dfz=dfz.reset_index(drop=True)
                 break;
             y7[i]=pp[j]

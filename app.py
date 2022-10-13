@@ -38,8 +38,7 @@ with st.sidebar:
     if not st.session_state['finder']==KM[i,0]:
       dff=dff.drop([i])
   for i in range(0,8):
-    st.write(dff.iat[0,i]+":"+dff.iat[1,i])
-  st.write(dff)
+    st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
 nAI=0;nCS=0;nEC=0;nME=0;nMA=0;nBT=0;nCL=0;
 AIE=[];CSE=[];ECE=[];MEE=[];MAE=[];BTE=[];CLE=[];
 for i in range(1,np.size(AN)):

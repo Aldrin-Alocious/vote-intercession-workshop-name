@@ -6,7 +6,8 @@ st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
-st.sidebar.subheader("Search")
+st.sidebar.header("Search")
+st.sidebar.text_input()
 dfz=df
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()

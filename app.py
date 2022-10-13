@@ -226,7 +226,7 @@ def find(stw,c):
   n=dfz[['Unnamed: 7']];
   n=n.to_numpy();
   for i in range(1,np.size(l)):
-    if n[i]==c:
+    if n[i]==c or c=='jump':
       if l[i]==a and m[i]==b:
         return i
   return 0
@@ -314,7 +314,7 @@ if finished:
       pp=listop(y5[i])
       pq=len(pp)
       for j in range(0,pq):
-        pr=find(pp[j],y4[i])
+        pr=find(pp[j],'jump')
         if pr>0:
           y7[i]=pp[j]
           dfz=dfz.drop([pr])

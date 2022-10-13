@@ -7,7 +7,7 @@ st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
 st.sidebar.header("Search")
-st.sidebar.text_input("ENTER")
+st.sidebar.text_input("")
 dfz=df
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()

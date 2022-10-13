@@ -305,21 +305,13 @@ if finished:
       for j in range(0,pq):
         pr=find(pp[j],y4[i])
         if pr>0:
+          if y6[i]=='Yes':
+            continue;
           y7[i]=pp[j]
           dfz=dfz.drop([pr])
           dfz=dfz.reset_index(drop=True)
           break;
-  for i in range(0,len(y6)):
-    if y7[i]=='':
-      pp=listop(y5[i])
-      pq=len(pp)
-      for j in range(0,pq):
-        pr=find(pp[j],'jump')
-        if pr>0:
-          y7[i]=pp[j]
-          dfz=dfz.drop([pr])
-          dfz=dfz.reset_index(drop=True)
-          break;
+  
   spotdf=pd.DataFrame()
   st.write(y6[0])
   spotdf['Application Number']=y1

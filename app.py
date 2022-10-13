@@ -32,7 +32,8 @@ with st.sidebar:
   if "finder" not in st.session_state:
     st.session_state.finder=''
   st.session_state['finder']=st.text_input("You can check whether a student is in the list or not").upper();
-  dff=df
+  if st.session_state['finder']==st.session_state['finder']:
+    dff=df
   for i in range(0,np.size(g)):
     if not st.session_state['finder']==KM[i,0]:
       dff=dff.drop([i])

@@ -284,6 +284,18 @@ with st.form("my_form",clear_on_submit=True):
     for item in st.session_state.items():
       st.write(item)
 finished=st.button(label='Finish')
+with st.sidebar:
+  st.header("Search by name")
+  if "finder" not in st.session_state:
+    st.session_state.finder=''
+  st.session_state['finder']=st.text_input("You can check whether a student is in the list or not").upper();
+  if st.session_state['finder']==st.session_state['finder']:
+    dff=df
+  for i in range(1,np.size(g)):
+    if not st.session_state['finder']==KM[i,0]:
+      dff=dff.drop([i])
+  for i in range(0,9):
+    st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
 if finished:
   a=st.session_state['appno'].lstrip('#');
   b=st.session_state['name'].lstrip('#');

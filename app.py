@@ -306,6 +306,17 @@ if finished:
         pr=find(pp[j],y4[i])
         if pr>0:
           if y6[i]=='Yes':
+            stp=y2[i]
+            NA=df[['Unnamed: 2']]
+            NA=NA.to_numpy()
+            for i in range(0,np.size(NA)):
+              if NA[i]==stp:
+                dfz.loc[len(dfz.index)]=df.loc[i]
+                dfz=dfz.reset_index(drop=True)
+                break;
+            y7[i]=pp[j]
+            dfz=dfz.drop([pr])
+            dfz=dfz.reset_index(drop=True)
             continue;
           y7[i]=pp[j]
           dfz=dfz.drop([pr])

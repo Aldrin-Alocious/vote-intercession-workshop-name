@@ -34,10 +34,10 @@ with st.sidebar:
   st.session_state['finder']=st.text_input("You can check whether a student is in the list or not").upper();
   if st.session_state['finder']==st.session_state['finder']:
     dff=df
-  for i in range(0,np.size(g)):
+  for i in range(1,np.size(g)):
     if not st.session_state['finder']==KM[i,0]:
       dff=dff.drop([i])
-  st.write(dff.to_string(index=False))
+  st.write(dff.to_numpy(index=False))
 nAI=0;nCS=0;nEC=0;nME=0;nMA=0;nBT=0;nCL=0;
 AIE=[];CSE=[];ECE=[];MEE=[];MAE=[];BTE=[];CLE=[];
 for i in range(1,np.size(AN)):

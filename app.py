@@ -297,69 +297,9 @@ if finished:
         (y6[ind], y6[min_index]) = (y6[min_index], y6[ind])
   y7=[];
   for i in range(0,len(y6)):
-    y7.append('HIGHER OPTION')
-  for i in range(0,len(y6)):
-    if not(y4[i]=='General'):
-      pp=listop(y5[i])
-      pq=len(pp)
-      for j in range(0,pq):
-        pr=find(pp[j],y4[i])
-        st.write(pr)
-        if pr>0:
-          st.write(y6[i])
-          if y6[i]=='Yes':
-            st.write('in')
-            stp=y2[i]
-            NA=df[['Unnamed: 2']]
-            NA=NA.to_numpy()
-            for i in range(0,np.size(NA)):
-              if NA[i]==stp:
-                dfz.loc[len(dfz.index)]=df.loc[i]
-                dfz=dfz.reset_index(drop=True)
-                break;
-              l=dfz[['Unnamed: 4']];
-              l=l.to_numpy();
-              m=dfz[['Unnamed: 6']];
-              m=m.to_numpy();
-              fgh=l[np.size(l)-1]
-              fgi=m[np.size(m)-1]
-              if fgh=='Artificial Intelligence And Machine Learning':
-                ret='AI'
-              elif fgh=='Computer Science':
-                ret='CS'
-              elif fgh=='Electronics and Communication':
-                ret='EC'
-              elif fgh=='Mechanical':
-                ret='ME'
-              elif fgh=='Mechanical Automobile':
-                ret='MA'
-              elif fgh=='Biotechnology':
-                ret='BT'
-              elif fgh=='Civil':
-                ret='CL'
-              if fgi=='Merit':
-                tet='SM'
-              elif fgi=='Management Quota':
-                tet='MG'
-              y7[i]=ret+'-'+tet+' to '+pp[j]
-              dfz=dfz.drop([pr])
-              dfz=dfz.reset_index(drop=True)
-          else:
-            y7[i]=pp[j]
-            dfz=dfz.drop([pr])
-            dfz=dfz.reset_index(drop=True)
-            break;
-  for i in range(0,len(y6)):
-    if y7[i]=='HIGHER OPTION':
-      pp=listop(y5[i])
-      pq=len(pp)
-      for j in range(0,pq):
-        pr=find(pp[j],'jump')
-        if pr>0:
-          y7[i]=pp[j]
-          dfz=dfz.drop([pr])
-          dfz=dfz.reset_index(drop=True)
-          break;
+    y7.append('')
+
+  
   spotdf=pd.DataFrame()
   st.write(y6[0])
   spotdf['Application Number']=y1

@@ -298,7 +298,17 @@ if finished:
   y7=[];
   for i in range(0,len(y6)):
     y7.append('')
-
+  for i in range(0,len(y6)):
+    if not(y4[i]=='General'):
+      pp=listop(y5[i])
+      pq=len(pp)
+      for j in range(0,pq):
+        pr=find(pp[j],y4[i])
+        if pr>0:
+          y7[i]=pp[j]
+          dfz=dfz.drop([pr])
+          dfz=dfz.reset_index(drop=True)
+          break;
   
   spotdf=pd.DataFrame()
   st.write(y6[0])

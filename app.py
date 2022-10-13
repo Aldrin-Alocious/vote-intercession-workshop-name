@@ -6,15 +6,13 @@ st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
-st.sidebar.header("Search by name")
-st.sidebar.text_input("You can check whether a student is in the list or not")
 dfz=df
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)
 h=dfz[['Unnamed: 6']]
 h=h.to_numpy()
-h=np.array(h,ndmin=2)
+h=np.array(h,ndmin=2)           
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
     dfz=dfz.drop([i])
@@ -23,10 +21,19 @@ k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
 dfz=dfz.reset_index(drop=True)
 st.dataframe(dfz)
+KM=df[['Unnamed: 2']]
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
 AN=AN.to_numpy()
 CT=CT.to_numpy()
+KM=KM.to_numpy()
+st.sidebar.header("Search by name")
+if "finder" not in st.session_state:
+  st.session_state.finder=''
+st.session_state['finder']=st.sidebar.text_input("You can check whether a student is in the list or not")
+for i in range(0,np.size(g)):
+  if st.session_state['finder']==KM[i,0]:
+    st.write(df.loc[i])
 nAI=0;nCS=0;nEC=0;nME=0;nMA=0;nBT=0;nCL=0;
 AIE=[];CSE=[];ECE=[];MEE=[];MAE=[];BTE=[];CLE=[];
 for i in range(1,np.size(AN)):

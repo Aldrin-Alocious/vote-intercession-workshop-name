@@ -31,11 +31,11 @@ st.sidebar.header("Search by name")
 if "finder" not in st.session_state:
   st.session_state.finder=''
 st.session_state['finder']=st.sidebar.text_input("You can check whether a student is in the list or not").upper();
+dff=df
 for i in range(0,np.size(g)):
-  if not st.session_state['finder']==KM[i]:
-    dff=df
-    dff.loc[len(dff.index)]=df.loc[i]
-    st.dataframe(dff)
+  if not st.session_state['finder']==KM[i,0]:
+    dff=dff.drop([i])
+st.sidebar.dataframe(dff)
 nAI=0;nCS=0;nEC=0;nME=0;nMA=0;nBT=0;nCL=0;
 AIE=[];CSE=[];ECE=[];MEE=[];MAE=[];BTE=[];CLE=[];
 for i in range(1,np.size(AN)):

@@ -283,7 +283,8 @@ with st.sidebar:
     if not st.session_state['finder']==KM[i,0]:
       dff=dff.drop([i])
   for i in range(0,9):
-    st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
+    if not dff.iat[1,i]=='':
+      st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
 if finished:
   a=st.session_state['appno'].lstrip('#');
   b=st.session_state['name'].lstrip('#');

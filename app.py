@@ -286,6 +286,7 @@ with st.sidebar:
   for i in range(0,9):
     if dff.iat[1,0]=='Sl No':
       st.write("Not found")
+      break;
     else:
       st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
 if finished:

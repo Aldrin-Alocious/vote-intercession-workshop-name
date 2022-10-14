@@ -287,6 +287,7 @@ with st.sidebar:
     if dff.iat[1,0]=='Sl no':
       st.write("Not found")
     else:
+      st.write(dff.iat[1,0])
       st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
 if finished:
   a=st.session_state['appno'].lstrip('#');

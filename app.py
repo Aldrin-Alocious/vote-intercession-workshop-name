@@ -284,7 +284,7 @@ with st.sidebar:
       dff=dff.drop([i])
   dff.loc[len(dff.index)]=dff.loc[0]
   for i in range(0,9):
-    if dff.iat[1,i]=='Sl no':
+    if dff.iat[1,0]=='Sl no':
       st.write("Not found")
     else:
       st.write(dff.iat[0,i]+" : "+dff.iat[1,i])

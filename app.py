@@ -346,7 +346,7 @@ if finished:
       pp=listop(y5[i])
       pq=len(pp)
       for j in range(0,pq):
-        pr=find(pp[j],y4[i])
+        pr=find(pp[j],'jump')
         if pr>0:
           if y6[i]=='Yes':
             stp=y2[i]
@@ -366,7 +366,6 @@ if finished:
           dfz=dfz.reset_index(drop=True)
           break;
   spotdf=pd.DataFrame()
-  st.write(y6[0])
   spotdf['Application Number']=y1
   spotdf['Name']=y2
   spotdf['KEAM Rank']=y3
@@ -385,6 +384,7 @@ if finished:
   st.session_state.reserve=''
   st.session_state.opti=''
   st.session_state.sctian=''
+  st.session_state.finder=''
   st.dataframe(dfz)
   st.balloons()
   exit()

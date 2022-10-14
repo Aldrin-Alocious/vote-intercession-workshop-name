@@ -282,8 +282,11 @@ with st.sidebar:
   for i in range(1,np.size(g)):
     if not st.session_state['finder']==KM[i,0]:
       dff=dff.drop([i])
+  dff.loc[len(dff.index)]=dff.loc[0]
   for i in range(0,9):
-    if not dff.iat[1,i]:
+    if dff.iat[1,i]=='Sl no':
+      st.write("Not found")
+    else:
       st.write(dff.iat[0,i]+" : "+dff.iat[1,i])
 if finished:
   a=st.session_state['appno'].lstrip('#');

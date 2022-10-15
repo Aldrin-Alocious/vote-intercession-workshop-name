@@ -16,6 +16,8 @@ h=np.array(h,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
     dfz=dfz.drop([i])
+dfz1=dfz
+dfz2=dfz
 indice=[];
 k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
@@ -323,8 +325,6 @@ if finished:
   y9=[];
   for i in range(0,len(y6)):
     y9.append('')
-  dfz1=dfz;
-  dfz2=dfz;
   for i in range(0,len(y6)):
     if not y4[i]=='General':
       pp=listop(y5[i])

@@ -396,6 +396,8 @@ if finished:
   st.session_state.sctian=''
   st.session_state.finder=''
   st.dataframe(dfz)
+  st.dataframe(dfz1)
+  st.dataframe(dfz2)
   st.balloons()
   exit()
   st.write("Failed")

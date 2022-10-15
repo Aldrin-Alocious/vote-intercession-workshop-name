@@ -317,6 +317,12 @@ if finished:
   y7=[];
   for i in range(0,len(y6)):
     y7.append('')
+  y8=[];
+  for i in range(0,len(y6)):
+    y8.append('')
+  y9=[];
+  for i in range(0,len(y6)):
+    y9.append('')
   for i in range(0,len(y6)):
     if not y4[i]=='General':
       pp=listop(y5[i])
@@ -357,11 +363,11 @@ if finished:
                 dfz.loc[len(dfz.index)]=df.loc[k]
                 dfz=dfz.reset_index(drop=True)
                 break;
-            y7[i]=pp[j]
+            y8[i]=pp[j]
             dfz=dfz.drop([pr])
             dfz=dfz.reset_index(drop=True)
             continue;
-          y7[i]=pp[j]
+          y8[i]=pp[j]
           dfz=dfz.drop([pr])
           dfz=dfz.reset_index(drop=True)
           break;
@@ -372,7 +378,9 @@ if finished:
   spotdf['Reservation Category']=y4
   spotdf['Opted']=y5
   spotdf['Already Admitted']=y6
-  spotdf['Alloted']=y7
+  spotdf['Alloted by reservation']=y7
+  spotdf['Alloted by rank']=y8
+  spotdf['Alloted']=y9
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
   spotdf=spotdf.reset_index(drop=True)

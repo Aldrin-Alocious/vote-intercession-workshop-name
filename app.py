@@ -18,6 +18,8 @@ for i in range(1,np.size(g)):
     dfz=dfz.drop([i])
 dfz1=dfz
 dfz2=dfz
+st.write(dfz1)
+st.write(dfz2)
 indice=[];
 k=dfz[['Unnamed: 8']]
 k=k.to_numpy()

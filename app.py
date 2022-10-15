@@ -388,22 +388,22 @@ if finished:
       pr=find2(pp[j],'jump')
       if pr>0:
         if y6[i]=='Yes':
-          stp=y2[i]
-          NA=df[['Unnamed: 2']]
-          NA=NA.to_numpy()
-          for k in range(0,np.size(NA)):
-            if NA[k]==stp:
-              dfz2.loc[len(dfz2.index)]=df.loc[k]
-              dfz2=dfz2.reset_index(drop=True)
-              break;
+            stp=y2[i]
+            NA=df[['Unnamed: 2']]
+            NA=NA.to_numpy()
+            for k in range(0,np.size(NA)):
+              if NA[k]==stp:
+                dfz2.loc[len(dfz2.index)]=df.loc[k]
+                dfz2=dfz2.reset_index(drop=True)
+                break;
+            y8[i]=pp[j]
+            dfz2=dfz2.drop([pr])
+            dfz2=dfz2.reset_index(drop=True)
+            continue;
           y8[i]=pp[j]
           dfz2=dfz2.drop([pr])
           dfz2=dfz2.reset_index(drop=True)
-          continue;
-        y8[i]=pp[j]
-        dfz2=dfz2.drop([pr])
-        dfz2=dfz2.reset_index(drop=True)
-        break;
+          break;
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

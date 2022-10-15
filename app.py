@@ -235,7 +235,7 @@ def find1(stw,c):
       if l[i]==a and m[i]==b:
         return i
   return 0
-def find1(stw,c):
+def find2(stw,c):
   x=stw.partition('-')
   if x[0]=='AI':
     a='Artificial Intelligence And Machine Learning'

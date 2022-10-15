@@ -362,7 +362,7 @@ if finished:
       pp=listop(y5[i])
       pq=len(pp)
       for j in range(0,pq):
-        pr=find(pp[j],y4[i])
+        pr=find1(pp[j],y4[i])
         if pr>0:
           if y6[i]=='Yes':
             stp=y2[i]
@@ -385,7 +385,7 @@ if finished:
       pp=listop(y5[i])
       pq=len(pp)
       for j in range(0,pq):
-        pr=find(pp[j],'jump')
+        pr=find2(pp[j],'jump')
         if pr>0:
           if y6[i]=='Yes':
             stp=y2[i]

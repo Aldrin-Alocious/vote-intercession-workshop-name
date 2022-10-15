@@ -323,6 +323,8 @@ if finished:
   y9=[];
   for i in range(0,len(y6)):
     y9.append('')
+  dfz1=dfz;
+  dfz2=dfz;
   for i in range(0,len(y6)):
     if not y4[i]=='General':
       pp=listop(y5[i])
@@ -336,16 +338,16 @@ if finished:
             NA=NA.to_numpy()
             for k in range(0,np.size(NA)):
               if NA[k]==stp:
-                dfz.loc[len(dfz.index)]=df.loc[k]
-                dfz=dfz.reset_index(drop=True)
+                dfz1.loc[len(dfz1.index)]=df.loc[k]
+                dfz1=dfz1.reset_index(drop=True)
                 break;
             y7[i]=pp[j]
-            dfz=dfz.drop([pr])
-            dfz=dfz.reset_index(drop=True)
+            dfz1=dfz1.drop([pr])
+            dfz1=dfz1.reset_index(drop=True)
             continue;
           y7[i]=pp[j]
-          dfz=dfz.drop([pr])
-          dfz=dfz.reset_index(drop=True)
+          dfz1=dfz1.drop([pr])
+          dfz1=dfz1.reset_index(drop=True)
           break;
   for i in range(0,len(y6)):
     if y7[i]=='':
@@ -360,16 +362,16 @@ if finished:
             NA=NA.to_numpy()
             for k in range(0,np.size(NA)):
               if NA[k]==stp:
-                dfz.loc[len(dfz.index)]=df.loc[k]
-                dfz=dfz.reset_index(drop=True)
+                dfz2.loc[len(dfz2.index)]=df.loc[k]
+                dfz2=dfz2.reset_index(drop=True)
                 break;
             y8[i]=pp[j]
-            dfz=dfz.drop([pr])
-            dfz=dfz.reset_index(drop=True)
+            dfz2=dfz2.drop([pr])
+            dfz2=dfz2.reset_index(drop=True)
             continue;
           y8[i]=pp[j]
-          dfz=dfz.drop([pr])
-          dfz=dfz.reset_index(drop=True)
+          dfz2=dfz2.drop([pr])
+          dfz2=dfz2.reset_index(drop=True)
           break;
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1

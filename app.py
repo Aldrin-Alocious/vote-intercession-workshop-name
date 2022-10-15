@@ -16,15 +16,14 @@ h=np.array(h,ndmin=2)
 for i in range(1,np.size(g)):
   if g[i]=='Yes' or h[i]=='NRI' or h[i]=='TFW-Merit':
     dfz=dfz.drop([i])
-dfz1=dfz
-dfz2=dfz
-st.write(dfz1)
-st.write(dfz2)
-indice=[];
 k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
 dfz=dfz.reset_index(drop=True)
+dfz1=dfz
+dfz2=dfz
 st.dataframe(dfz)
+st.write(dfz1)
+st.write(dfz2)
 KM=df[['Unnamed: 2']]
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]

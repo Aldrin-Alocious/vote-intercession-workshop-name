@@ -154,35 +154,6 @@ vac7=vacancies(CL)
 vdf['Civil Engineering']=vslashs(vac7,seat7)
 st.header("Vacancies and Seats")
 st.dataframe(vdf)
-options=[];
-if vac1[0]>0:
-  options.append('AI-SM')
-if vac1[1]>0:
-  options.append('AI-MG')
-if vac2[0]>0:
-  options.append('CS-SM')
-if vac2[1]>0:
-  options.append('CS-MG')
-if vac3[0]>0:
-  options.append('EC-SM')
-if vac3[1]>0:
-  options.append('EC-MG')
-if vac4[0]>0:
-  options.append('ME-SM')
-if vac4[1]>0:
-  options.append('ME-MG')
-if vac5[0]>0:
-  options.append('MA-SM')
-if vac5[1]>0:
-  options.append('MA-MG')
-if vac6[0]>0:
-  options.append('BT-SM')
-if vac6[1]>0:
-  options.append('BT-MG')
-if vac7[0]>0:
-  options.append('CL-SM')
-if vac7[1]>0:
-  options.append('CL-MG')
 def oplist(op):
   c='';
   for i in range(0,np.size(op)):
@@ -292,7 +263,7 @@ with st.form("my_form",clear_on_submit=True):
   gb=st.text_input('Name')
   gc=st.text_input('KEAM Rank')
   gd=st.selectbox('Reservation Category', ['General', 'EWS', 'OEC', 'OBC', 'Latin Catholic and Anglo Indian (LA)', 'Other Backward Hindu (BH)', 'Ezhava (EZ)', 'Muslim (MU)', 'Viswakarma and related communities(VK)'])
-  op=st.multiselect('Options', options)
+  op=st.multiselect('Options', ['AI-SM','AI-MG','CS-SM','CS-MG','EC-SM','EC-MG','ME-SM','ME-MG','MA-SM','MA-MG','BT-SM','BT-MG','CL-SM','CL-MG'])
   ge=oplist(op)
   gf=st.selectbox('Already admitted?',['No','Yes'])
   submitted=st.form_submit_button(label='Submit')

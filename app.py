@@ -382,6 +382,9 @@ if finished:
           break;
   MRA=dfz3[['Unnamed: 2']]
   MRA=MRA.to_numpy()
+  df4=pd.DataFrame()
+  df5=pd.DataFrame()
+  df6=pd.DataFrame()
   for i in range(0,np.size(MRA)):
     dfz4.loc[len(dfz4.index)]=dfz3.loc[i]
     dfz5.loc[len(dfz5.index)]=dfz3.loc[i]

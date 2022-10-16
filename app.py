@@ -387,7 +387,37 @@ if finished:
       if ab1<=ab2:
         y9[i]=y7[i]
   for i in range(0,len(y6)):
-    if not
+      if not y9[i]=='':
+        x=stw.partition('-')
+        if x[0]=='AI':
+          a='Artificial Intelligence And Machine Learning'
+        elif x[0]=='CS':
+          a='Computer Science'
+        elif x[0]=='EC':
+          a='Electronics and Communication'
+        elif x[0]=='ME':
+          a='Mechanical'
+        elif x[0]=='MA':
+          a='Mechanical Automobile'
+        elif x[0]=='BT':
+          a='Biotechnology'
+        elif x[0]=='CL':
+          a='Civil'
+        if x[2]=='SM':
+          b='Merit'
+        elif x[2]=='MG':
+          b='Management Quota'
+        l=dfz3[['Unnamed: 4']];
+        l=l.to_numpy();
+        m=dfz3[['Unnamed: 6']];
+        m=m.to_numpy();
+        n=dfz3[['Unnamed: 7']];
+        n=n.to_numpy();
+        for j in range(1,np.size(l)):
+          if n[j]==y4[i]:
+            if l[j]==a and m[j]==b:
+              dfz3=dfz3.drop([j])
+              dfz3=dfz3.reset_index(drop=True)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

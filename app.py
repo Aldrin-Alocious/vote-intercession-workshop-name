@@ -384,7 +384,7 @@ if finished:
     if not y7[i]=='':
       ab1=y5[i].find(y7[i])
       ab2=y5[i].find(y8[i])
-      if ab1<=ab2 or ab2=='':
+      if ab1<=ab2 or y8[i]=='':
         y9[i]=y7[i]
   for i in range(0,len(y6)):
       if not y9[i]=='':

@@ -380,9 +380,12 @@ if finished:
           dfz3.loc[len(dfz3.index)]=df.loc[k]
           dfz3=dfz3.reset_index(drop=True)
           break;
-  dfz4=dfz3.copy()
-  dfz5=dfz3.copy()
-  dfz6=dfz3.copy()
+  MRA=dfz3[['Name']]
+  MRA=MRA.to_numpy()
+  for i in range(0,np.size(MRA)):
+    dfz4.loc[len(dfz4.index)]=dfz3.loc[i]
+    dfz5.loc[len(dfz5.index)]=dfz3.loc[i]
+    dfz6.loc[len(dfz6.index)]=dfz3.loc[i]
   for i in range(0,len(y6)):
     if not y4[i]=='General':
       pp=listop(y5[i])

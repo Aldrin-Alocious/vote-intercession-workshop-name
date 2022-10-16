@@ -443,6 +443,7 @@ if finished:
   st.dataframe(dfz)
   st.dataframe(dfz1)
   st.dataframe(dfz2)
+  st.dataframe(dfz3)
   st.balloons()
   exit()
   st.write("Failed")

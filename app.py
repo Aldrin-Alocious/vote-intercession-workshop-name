@@ -388,7 +388,7 @@ if finished:
         y9[i]=y7[i]
   for i in range(0,len(y6)):
       if not y9[i]=='':
-        x=stw.partition('-')
+        x=y9[i].partition('-')
         if x[0]=='AI':
           a='Artificial Intelligence And Machine Learning'
         elif x[0]=='CS':

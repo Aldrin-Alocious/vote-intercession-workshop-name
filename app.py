@@ -380,7 +380,7 @@ if finished:
           dfz3.loc[len(dfz3.index)]=df.loc[k]
           dfz3=dfz3.reset_index(drop=True)
           break;
-  MRA=dfz3[['Name']]
+  MRA=dfz3[['Unnamed: 2']]
   MRA=MRA.to_numpy()
   for i in range(0,np.size(MRA)):
     dfz4.loc[len(dfz4.index)]=dfz3.loc[i]

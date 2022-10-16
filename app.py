@@ -364,13 +364,12 @@ if finished:
         y9[i]=y8[i]
   for i in range(0,len(y6)):
     if y6[i]=='Yes':
-      stp=y2[i]
       NA=df[['Unnamed: 2']]
       NA=NA.to_numpy()
       for k in range(0,np.size(NA)):
-        if NA[k]==stp:
+        if NA[k]==y2[i]:
           dfz3.loc[len(dfz3.index)]=df.loc[k]
-          dfz3=dfz2.reset_index(drop=True)
+          dfz3=dfz3.reset_index(drop=True)
           break;
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1

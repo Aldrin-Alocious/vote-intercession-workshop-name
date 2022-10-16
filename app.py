@@ -351,7 +351,7 @@ if finished:
             y7[i]=pp[j]
             dfz1=dfz1.drop([pr])
             dfz1=dfz1.reset_index(drop=True)
-            continue;
+            break;
           y7[i]=pp[j]
           dfz1=dfz1.drop([pr])
           dfz1=dfz1.reset_index(drop=True)
@@ -374,7 +374,7 @@ if finished:
           y8[i]=pp[j]
           dfz2=dfz2.drop([pr])
           dfz2=dfz2.reset_index(drop=True)
-          continue;
+          break;
         y8[i]=pp[j]
         dfz2=dfz2.drop([pr])
         dfz2=dfz2.reset_index(drop=True)

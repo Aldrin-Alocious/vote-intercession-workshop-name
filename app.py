@@ -386,6 +386,8 @@ if finished:
       ab2=y5[i].find(y8[i])
       if ab1<=ab2 or y8[i]=='':
         y9[i]=y7[i]
+      else:
+        y9[i]=y8[i]
   for i in range(0,len(y6)):
       if not y9[i]=='':
         x=y9[i].partition('-')

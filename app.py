@@ -9,6 +9,7 @@ st.dataframe(df)
 dfz=df
 dfz1=df
 dfz2=df
+dfz3=df
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)
@@ -20,14 +21,14 @@ for i in range(1,np.size(g)):
     dfz=dfz.drop([i])
     dfz1=dfz1.drop([i])
     dfz2=dfz2.drop([i])
+    dfz3=dfz3.drop([i])
 k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
 dfz=dfz.reset_index(drop=True)
 dfz1=dfz1.reset_index(drop=True)
 dfz2=dfz2.reset_index(drop=True)
+dfz3=dfz3.reset_index(drop=True)
 st.dataframe(dfz)
-st.write(dfz1)
-st.write(dfz2)
 KM=df[['Unnamed: 2']]
 AN=df[['Unnamed: 3']]
 CT=df[['Unnamed: 4']]
@@ -162,7 +163,7 @@ def oplist(op):
   c='';
   for i in range(0,np.size(op)):
     c=str(c)+' '+str(op[i])
-  return c
+  return c.strip()
 def decode(ss):
   z=[];
   for i in range(0,ss.count('#')):
@@ -385,6 +386,8 @@ if finished:
       ab2=y5[i].find(y8[i])
       if ab1<=ab2:
         y9[i]=y7[i]
+  for i in range(0,len(y6)):
+    if not
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

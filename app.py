@@ -383,7 +383,7 @@ if finished:
     if not y7[i]=='':
       ab1=y5[i].find(y7[i])
       ab2=y5[i].find(y8[i])
-      if ab1<ab2:
+      if ab1<=ab2:
         y9[i]=y7[i]
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1

@@ -372,7 +372,7 @@ if finished:
       else:
         y9[i]=y8[i]
   for i in range(0,len(y6)):
-    if y6[i]=='Yes':
+    if y6[i]=='Yes' and not y9[i]=='':
       NA=df[['Unnamed: 2']]
       NA=NA.to_numpy()
       for k in range(0,np.size(NA)):

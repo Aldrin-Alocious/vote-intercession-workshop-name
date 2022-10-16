@@ -379,6 +379,12 @@ if finished:
         dfz2=dfz2.drop([pr])
         dfz2=dfz2.reset_index(drop=True)
         break;
+  for i in range(0,len(y6)):
+    if not y7[i]=='':
+      ab1=y5[i].find(y7[i])
+      ab2=y5[i].find(y8[i])
+      if ab1<ab2:
+        y9[i]=y7[i]
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

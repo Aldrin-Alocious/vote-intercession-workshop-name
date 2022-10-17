@@ -10,6 +10,9 @@ dfz=df
 dfz1=df
 dfz2=df
 dfz3=df
+dfz4=df
+dfz5=df
+dfz6=df
 g=dfz[['Unnamed: 8']]
 g=g.to_numpy()
 g=np.array(g,ndmin=2)
@@ -22,12 +25,18 @@ for i in range(1,np.size(g)):
     dfz1=dfz1.drop([i])
     dfz2=dfz2.drop([i])
     dfz3=dfz3.drop([i])
+    dfz4=dfz4.drop([i])
+    dfz5=dfz5.drop([i])
+    dfz6=dfz6.drop([i])
 k=dfz[['Unnamed: 8']]
 k=k.to_numpy()
 dfz=dfz.reset_index(drop=True)
 dfz1=dfz1.reset_index(drop=True)
 dfz2=dfz2.reset_index(drop=True)
 dfz3=dfz3.reset_index(drop=True)
+dfz4=dfz4.reset_index(drop=True)
+dfz5=dfz5.reset_index(drop=True)
+dfz6=dfz6.reset_index(drop=True)
 st.dataframe(dfz)
 KM=df[['Unnamed: 2']]
 AN=df[['Unnamed: 3']]
@@ -378,17 +387,14 @@ if finished:
       for k in range(0,np.size(NA)):
         if NA[k]==y2[i]:
           dfz3.loc[len(dfz3.index)]=df.loc[k]
+          dfz4.loc[len(dfz4.index)]=df.loc[k]
+          dfz5.loc[len(dfz5.index)]=df.loc[k]
+          dfz6.loc[len(dfz6.index)]=df.loc[k]
           dfz3=dfz3.reset_index(drop=True)
+          dfz4=dfz4.reset_index(drop=True)
+          dfz5=dfz5.reset_index(drop=True)
+          dfz6=dfz6.reset_index(drop=True)
           break;
-  MRA=dfz3[['Unnamed: 2']]
-  MRA=MRA.to_numpy()
-  df4=pd.DataFrame()
-  df5=pd.DataFrame()
-  df6=pd.DataFrame()
-  for i in range(0,np.size(MRA)):
-    dfz4.loc[len(dfz4.index)]=dfz3.loc[i]
-    dfz5.loc[len(dfz5.index)]=dfz3.loc[i]
-    dfz6.loc[len(dfz6.index)]=dfz3.loc[i]
   for i in range(0,len(y6)):
     if not y4[i]=='General':
       pp=listop(y5[i])

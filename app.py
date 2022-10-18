@@ -378,23 +378,58 @@ if finished:
       ab2=y5[i].find(y8[i])
       if ab1<=ab2 or y8[i]=='':
         y9[i]=y7[i]
+        if y6[i]=='Yes':
+          stp=y2[i]
+          NA=df[['Unnamed: 2']]
+          NA=NA.to_numpy()
+          for k in range(0,np.size(NA)):
+            if NA[k]==stp:
+              dfz3.loc[len(dfz3.index)]=df.loc[k]
+              dfz3=dfz3.reset_index(drop=True)
+              break;
       else:
         y9[i]=y8[i]
+        if y6[i]=='Yes':
+          stp=y2[i]
+          NA=df[['Unnamed: 2']]
+          NA=NA.to_numpy()
+          for k in range(0,np.size(NA)):
+            if NA[k]==stp:
+              dfz3.loc[len(dfz3.index)]=df.loc[k]
+              dfz3=dfz3.reset_index(drop=True)
+              break;
   for i in range(0,len(y6)):
-    if y6[i]=='Yes' and not y9[i]=='':
-      NA=df[['Unnamed: 2']]
-      NA=NA.to_numpy()
-      for k in range(0,np.size(NA)):
-        if NA[k]==y2[i]:
-          dfz3.loc[len(dfz3.index)]=df.loc[k]
-          dfz4.loc[len(dfz4.index)]=df.loc[k]
-          dfz5.loc[len(dfz5.index)]=df.loc[k]
-          dfz6.loc[len(dfz6.index)]=df.loc[k]
-          dfz3=dfz3.reset_index(drop=True)
-          dfz4=dfz4.reset_index(drop=True)
-          dfz5=dfz5.reset_index(drop=True)
-          dfz6=dfz6.reset_index(drop=True)
-          break;
+      if not y9[i]=='':
+        x=y9[i].partition('-')
+        if x[0]=='AI':
+          a='Artificial Intelligence And Machine Learning'
+        elif x[0]=='CS':
+          a='Computer Science'
+        elif x[0]=='EC':
+          a='Electronics and Communication'
+        elif x[0]=='ME':
+          a='Mechanical'
+        elif x[0]=='MA':
+          a='Mechanical Automobile'
+        elif x[0]=='BT':
+          a='Biotechnology'
+        elif x[0]=='CL':
+          a='Civil'
+        if x[2]=='SM':
+          b='Merit'
+        elif x[2]=='MG':
+          b='Management Quota'
+        l=dfz3[['Unnamed: 4']];
+        l=l.to_numpy();
+        m=dfz3[['Unnamed: 6']];
+        m=m.to_numpy();
+        n=dfz3[['Unnamed: 7']];
+        n=n.to_numpy();
+        for j in range(1,np.size(l)):
+          if n[j]==y4[i]:
+            if l[j]==a and m[j]==b:
+              dfz3=dfz3.drop([j])
+              dfz3=dfz3.reset_index(drop=True)
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
@@ -421,8 +456,6 @@ if finished:
   st.dataframe(dfz1)
   st.dataframe(dfz2)
   st.dataframe(dfz3)
-  st.dataframe(dfz4)
-  st.dataframe(dfz5)
   st.balloons()
   exit()
   st.write("Failed")

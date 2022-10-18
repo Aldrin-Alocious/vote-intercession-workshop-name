@@ -395,35 +395,6 @@ if finished:
           dfz5=dfz5.reset_index(drop=True)
           dfz6=dfz6.reset_index(drop=True)
           break;
-  for i in range(0,len(y6)):
-    if not y4[i]=='General':
-      pp=listop(y5[i])
-      pq=len(pp)
-      for j in range(0,pq):
-        pr=find1(pp[j],y4[i])
-        if pr>0:
-          y10[i]=pp[j]
-          dfz4=dfz4.drop([pr])
-          dfz4=dfz4.reset_index(drop=True)
-          break;
-  for i in range(0,len(y6)):
-    pp=listop(y5[i])
-    pq=len(pp)
-    for j in range(0,pq):
-      pr=find2(pp[j],'jump')
-      if pr>0:
-        y11[i]=pp[j]
-        dfz5=dfz5.drop([pr])
-        dfz5=dfz5.reset_index(drop=True)
-        break;
-  for i in range(0,len(y6)):
-    if not y10[i]=='':
-      ab1=y5[i].find(y10[i])
-      ab2=y5[i].find(y11[i])
-      if ab1<=ab2 or y11[i]=='':
-        y12[i]=y10[i]
-      else:
-        y12[i]=y11[i]
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
@@ -434,9 +405,6 @@ if finished:
   spotdf['Alloted by reservation']=y7
   spotdf['Alloted by rank']=y8
   spotdf['Alloted']=y9
-  spotdf['reservation2']=y10
-  spotdf['rank2']=y11
-  spotdf['Alloted2']=y12
   st.subheader("Spot Application List")
   sdf=spotdf.to_csv().encode('utf-8')
   spotdf=spotdf.reset_index(drop=True)

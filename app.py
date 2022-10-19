@@ -375,56 +375,6 @@ if finished:
           dfz1=dfz1.drop([pr])
           dfz1=dfz1.reset_index(drop=True)
           break;
-  for i in range(0,len(y6)):
-    pp=listop(y5[i])
-    pq=len(pp)
-    for j in range(0,pq):
-      pr=find2(pp[j],'jump')
-      if pr>0:
-        if y6[i]=='Yes':
-          stp=y2[i]
-          NA=df[['Unnamed: 2']]
-          NA=NA.to_numpy()
-          for k in range(0,np.size(NA)):
-            if NA[k]==stp:
-              dfz2.loc[len(dfz2.index)]=df.loc[k]
-              dfz2=dfz2.reset_index(drop=True)
-              break;
-          y8[i]=pp[j]
-          dfz2=dfz2.drop([pr])
-          dfz2=dfz2.reset_index(drop=True)
-          break;
-        y8[i]=pp[j]
-        dfz2=dfz2.drop([pr])
-        dfz2=dfz2.reset_index(drop=True)
-        break;
-  for i in range(0,len(y6)):
-    if not y7[i]=='':
-      ab1=y5[i].find(y7[i])
-      ab2=y5[i].find(y8[i])
-      if ab1<=ab2 or y8[i]=='':
-        y9[i]=y7[i]
-        if y6[i]=='Yes':
-          stp=y2[i]
-          NA=df[['Unnamed: 2']]
-          NA=NA.to_numpy()
-          for k in range(0,np.size(NA)):
-            if NA[k]==stp:
-              dfz3.loc[len(dfz3.index)]=df.loc[k]
-              dfz3=dfz3.reset_index(drop=True)
-              break;
-      else:
-        y9[i]=y8[i]
-        if y6[i]=='Yes':
-          stp=y2[i]
-          NA=df[['Unnamed: 2']]
-          NA=NA.to_numpy()
-          for k in range(0,np.size(NA)):
-            if NA[k]==stp:
-              dfz3.loc[len(dfz3.index)]=df.loc[k]
-              dfz3=dfz3.reset_index(drop=True)
-              break;
-  
   spotdf['Application Number']=y1
   spotdf['Name']=y2
   spotdf['KEAM Rank']=y3

@@ -375,6 +375,7 @@ if finished:
           dfz1=dfz1.drop([pr])
           dfz1=dfz1.reset_index(drop=True)
           break;
+  spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2
   spotdf['KEAM Rank']=y3

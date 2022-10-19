@@ -375,6 +375,120 @@ if finished:
           dfz1=dfz1.drop([pr])
           dfz1=dfz1.reset_index(drop=True)
           break;
+  for i in range(0,len(y6)):
+    pp=listop(y5[i])
+    pq=len(pp)
+    for j in range(0,pq):
+      pr=find2(pp[j],'jump')
+      if pr>0:
+        if y6[i]=='Yes':
+          stp=y2[i]
+          NA=df[['Unnamed: 2']]
+          NA=NA.to_numpy()
+          for k in range(0,np.size(NA)):
+            if NA[k]==stp:
+              dfz2.loc[len(dfz2.index)]=df.loc[k]
+              dfz2=dfz2.reset_index(drop=True)
+              break;
+          y8[i]=pp[j]
+          dfz2=dfz2.drop([pr])
+          dfz2=dfz2.reset_index(drop=True)
+          break;
+        y8[i]=pp[j]
+        dfz2=dfz2.drop([pr])
+        dfz2=dfz2.reset_index(drop=True)
+        break;
+  for i in range(0,len(y6)):
+    if not y7[i]=='':
+      ab1=y5[i].find(y7[i])
+      ab2=y5[i].find(y8[i])
+      if ab1<=ab2 or y8[i]=='':
+        y9[i]=y7[i]
+        if y6[i]=='Yes':
+          stp=y2[i]
+          NA=df[['Unnamed: 2']]
+          NA=NA.to_numpy()
+          for k in range(0,np.size(NA)):
+            if NA[k]==stp:
+              dfz3.loc[len(dfz3.index)]=df.loc[k]
+              dfz3=dfz3.reset_index(drop=True)
+              break;
+      else:
+        y9[i]=y8[i]
+        if y6[i]=='Yes':
+          stp=y2[i]
+          NA=df[['Unnamed: 2']]
+          NA=NA.to_numpy()
+          for k in range(0,np.size(NA)):
+            if NA[k]==stp:
+              dfz3.loc[len(dfz3.index)]=df.loc[k]
+              dfz3=dfz3.reset_index(drop=True)
+              break;
+  for i in range(0,len(y6)):
+      if not y9[i]=='':
+        x=y9[i].partition('-')
+        if x[0]=='AI':
+          a='Artificial Intelligence And Machine Learning'
+        elif x[0]=='CS':
+          a='Computer Science'
+        elif x[0]=='EC':
+          a='Electronics and Communication'
+        elif x[0]=='ME':
+          a='Mechanical'
+        elif x[0]=='MA':
+          a='Mechanical Automobile'
+        elif x[0]=='BT':
+          a='Biotechnology'
+        elif x[0]=='CL':
+          a='Civil'
+        if x[2]=='SM':
+          b='Merit'
+        elif x[2]=='MG':
+          b='Management Quota'
+        l=dfz3[['Unnamed: 4']];
+        l=l.to_numpy();
+        m=dfz3[['Unnamed: 6']];
+        m=m.to_numpy();
+        n=dfz3[['Unnamed: 7']];
+        n=n.to_numpy();
+        stupid='gone'
+        for j in range(1,np.size(l)):
+          if n[j]==y4[i]:
+            if l[j]==a and m[j]==b:
+              dfz3=dfz3.drop([j])
+              dfz3=dfz3.reset_index(drop=True)
+              stupid='done'
+        if stupid=='gone':
+          for j in range(1,np.size(l)):
+            if n[j]=='General':
+              if l[j]==a and m[j]==b:
+                dfz3=dfz3.drop([j])
+                dfz3=dfz3.reset_index(drop=True)
+                stupid='done'
+  for i in range(0,len(y6)):
+    if y9[i]=='':
+      pp=listop(y5[i])
+      pq=len(pp)
+      for j in range(0,pq):
+        pr=find1(pp[j],y4[i])
+        if pr>0:
+          if y6[i]=='Yes':
+            stp=y2[i]
+            NA=df[['Unnamed: 2']]
+            NA=NA.to_numpy()
+            for k in range(0,np.size(NA)):
+              if NA[k]==stp:
+                dfz3.loc[len(dfz3.index)]=df.loc[k]
+                dfz3=dfz3.reset_index(drop=True)
+                break;
+            y9[i]=pp[j]
+            dfz3=dfz3.drop([pr])
+            dfz3=dfz3.reset_index(drop=True)
+            break;
+          y9[i]=pp[j]
+          dfz3=dfz3.drop([pr])
+          dfz3=dfz3.reset_index(drop=True)
+          break;
   spotdf=pd.DataFrame()
   spotdf['Application Number']=y1
   spotdf['Name']=y2

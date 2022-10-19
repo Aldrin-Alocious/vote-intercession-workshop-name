@@ -6,6 +6,8 @@ st.image("SCT-LOGO.jpg")
 st.title("POOL LAB")
 df=pd.read_csv(st.file_uploader('Upload a CSV'))
 st.dataframe(df)
+dfpp=pd.read_csv(st.file_uploader('Upload a CSV'))
+st.dataframe(dfpp)
 dfz=df
 dfz1=df
 dfz2=df

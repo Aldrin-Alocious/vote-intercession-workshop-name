@@ -13,6 +13,6 @@ if op2=='Post':
 elif op2=='Mobile':
   tab2.image('3719326c-f43f-417a-b6f1-1c4fe70ec865.jpg')
 elif op2=='Television':
-  tab2.image('3719326c-f43f-417a-b6f1-1c4fe70ec865.jpg')
+  tab2.image('40b399fd-bf64-49b8-9cc9-edb546e6405a.jpg')
 elif op2=='Dish':
   tab2.image('3719326c-f43f-417a-b6f1-1c4fe70ec865.jpg')

@@ -12,7 +12,7 @@ tab1, tab2 = st.tabs(["Vote", "Results"])
 tab1.subheader("Holy Spirit guide us")
 with tab1.form("my_form",clear_on_submit=True):
   pc=st.text_input('Pass code')
-  op1=st.radio('Pick one', ['Connect', 'Bridge', 'Kneel', 'Entreaty'])
+  op1=st.radio('Pick one', ['Bridge', 'Connect', 'Kneel', 'Entreaty'])
   if op1=='Connect':
     st.write('Intercession connects us with God. So we are actually connecting God while praying. And the workshop is all about helping people to stay in this connection. "Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me." Revelation 3:20')
   elif op1=='Bridge':

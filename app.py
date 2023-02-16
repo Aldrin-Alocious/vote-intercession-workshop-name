@@ -21,6 +21,7 @@ with tab1.form("my_form",clear_on_submit=True):
     st.write('Know Now Eesho Earned Lives. We should pray because we belong to Him.')
   elif op1=='Entreaty':
     st.write('We should entreat to Jesus to stand in prayer life without considering the barriers in it. Entreaty means an earnest or humble request.')
+  submitted=st.form_submit_button(label='Submit')
   if submitted:
     for i in range(0,10):
       if pc==st.session_state['secretcode']:
